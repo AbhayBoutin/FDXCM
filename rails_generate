@@ -1,0 +1,138 @@
+# New rails project in folder wanted
+rails new fdxcm
+
+# Emp [Employee]
+	* fname
+	* lname
+	* cnum
+	* fdxnum
+	* hireDate
+	* dob
+	* active
+	* startDate
+	* endDate
+	* termDate
+	* EmpPSA		&
+	* Vehicle 	&
+
+rails genereate scaffold
+
+# User [User] //Devise - DNI email			
+	emp 		&
+	uName
+	contractor
+	active		
+	roleAssignment &
+
+& # RoleAssignment
+	relationship between User and Role
+
+& # Role
+	# owner|manager|emp
+	title
+
+# Term [Terminal]
+	fdxName
+	fdxNum
+	cName
+	cNum
+
+# Region
+	fdxName
+	fdxNum
+	cName
+	cNum
+
+& # PSA [Primary Service Area]
+	fdxName
+	fdxNum
+	cName
+	cNum
+	startDate
+	endDate
+	serviceType &
+	zips &
+	notes
+
+& # Zips
+	zip 	
+
+& # ServiceType
+	# ground|hd|lh|maintenance|rental|out-for-maintenance
+	ServiceType
+
+& # VehicleFuel []
+	# gas|diesel|CNG
+	fuel
+
+& # VehicleType
+	# p700|p1000|p1250
+	size
+	# bulk or not?
+	bulk
+
+& # Vehicle
+	cnum			
+	cname			
+	vin				
+	fdxnum		
+	VehicleType	&		
+	VehicleFuel &
+	notes
+	startDate
+	endDate	
+	active
+
+& # DailyData
+	d_stop		
+	d_pkg			
+	p_stop		
+	p_pkg			
+	calltag		
+	exceptions 	&
+	dna				
+	ils				
+	epu				
+	lpu				
+	startTime
+	endTime	
+	date			
+
+& # Exceptions
+	exceptions
+
+& # EmpTerm
+	emp 		&
+	term    &
+	startDate
+	endDate
+	active			
+
+& # EmpMgr
+	manager
+	emp
+
+
+# EmpVehicle
+
+
+# EmpPSA
+
+
+# FlatPayType
+
+
+# Freq
+
+
+# FlatPay
+
+
+# ProdPay
+
+
+# Notes
+
+
+# Thresholds
+

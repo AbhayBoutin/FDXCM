@@ -1,0 +1,37 @@
+<%= form_for(@terminal) do |f| %>
+  <% if @terminal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@terminal.errors.count, "error") %> prohibited this terminal from being saved:</h2>
+
+      <ul>
+      <% @terminal.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fedexTerminalName %><br />
+    <%= f.text_field :fedexTerminalName %>
+  </div>
+  <div class="field">
+    <%= f.label :fedexTerminalNumber %><br />
+    <%= f.number_field :fedexTerminalNumber %>
+  </div>
+  <div class="field">
+    <%= f.label :contractorTerminalName %><br />
+    <%= f.text_field :contractorTerminalName %>
+  </div>
+  <div class="field">
+    <%= f.label :contractorTerminalNumber %><br />
+    <%= f.number_field :contractorTerminalNumber %>
+  </div>
+  <div class="field">
+    <%= f.label :colocationBoolean %><br />
+    <%= f.check_box :colocationBoolean %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

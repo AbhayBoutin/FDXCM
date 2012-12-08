@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121208071407) do
+ActiveRecord::Schema.define(:version => 20121208071517) do
 
   create_table "employees", :force => true do |t|
     t.string   "firstName"
@@ -37,5 +37,15 @@ ActiveRecord::Schema.define(:version => 20121208071407) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
+
+  create_table "users", :force => true do |t|
+    t.boolean  "contractorBoolean"
+    t.boolean  "activeBoolean"
+    t.integer  "employee_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  add_index "users", ["employee_id"], :name => "index_users_on_employee_id"
 
 end

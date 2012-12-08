@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Contractorboolean:</b>
+  <%= @user.contractorBoolean %>
+</p>
+
+<p>
+  <b>Activeboolean:</b>
+  <%= @user.activeBoolean %>
+</p>
+
+<p>
+  <b>Employee:</b>
+  <%= @user.employee %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

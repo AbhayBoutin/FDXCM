@@ -1,4 +1,6 @@
 Fdxcm::Application.routes.draw do
+  resources :users
+
   resources :employees
 
   resources :notes

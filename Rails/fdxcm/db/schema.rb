@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121208071748) do
+ActiveRecord::Schema.define(:version => 20121208071920) do
 
   create_table "employees", :force => true do |t|
     t.string   "firstName"
@@ -36,6 +36,16 @@ ActiveRecord::Schema.define(:version => 20121208071748) do
     t.datetime "endDate"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "regions", :force => true do |t|
+    t.string   "fedexRegionName"
+    t.integer  "fedexRegionNumber"
+    t.string   "fedexRegionPhone"
+    t.string   "contractorRegionName"
+    t.integer  "contractorRegionNumber"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
   end
 
   create_table "roles", :force => true do |t|

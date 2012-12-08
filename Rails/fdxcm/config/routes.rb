@@ -1,4 +1,6 @@
 Fdxcm::Application.routes.draw do
+  resources :regions
+
   resources :terminals
 
   resources :user_roles

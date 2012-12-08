@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  fedexRegionName: MyString
+  fedexRegionNumber: 1
+  fedexRegionPhone: MyString
+  contractorRegionName: MyString
+  contractorRegionNumber: 1
+
+two:
+  fedexRegionName: MyString
+  fedexRegionNumber: 1
+  fedexRegionPhone: MyString
+  contractorRegionName: MyString
+  contractorRegionNumber: 1

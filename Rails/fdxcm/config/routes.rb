@@ -1,4 +1,6 @@
 Fdxcm::Application.routes.draw do
+  resources :user_roles
+
   resources :roles
 
   resources :users

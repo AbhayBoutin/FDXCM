@@ -1,138 +1,275 @@
+#Migration native types
+#  :primary_key
+# :string
+# :text
+# :integer
+# :float
+# :decimal
+# :datetime
+# :timestamp
+# :time
+# :date
+# :binary
+# :boolean
+
 # New rails project in folder wanted
-rails new fdxcm
+rails new fedexcm
 
-# Emp [Employee]
-	* fname
-	* lname
-	* cnum
-	* fdxnum
-	* hireDate
-	* dob
-	* active
-	* startDate
-	* endDate
-	* termDate
-	* EmpPSA		&
-	* Vehicle 	&
+&
+# Notes # Polymorphic
+	notable_id:integer
+	notable_type:string
+	content:text
+	startDate:datetime
+	endDate:datetime
+rails g scaffold Notes notable_id:integer notable_type:string content:text startDate:datetime endDate:datetime
 
-rails genereate scaffold
+# Employee
+	firstName:string
+	lastName:string
+	fedexNumber:integer
+	contractorNumber:integer
+	hireDate:date
+	dateOfBirth:date
+	activeBoolean:boolean
+	startDate:datetime
+	endDate:datetime
+	terminationDate:datetime
+	#### POST ####
+	notes 													has_many :notes, :as => :notable
+	employeePSA
+	employeeVehicle
+	user 														has_one :user
+rails g scaffold Employee firstName:string lastName:string fedexNumber:integer contractorNumber:integer	hireDate:date	dateOfBirth:date activeBoolean:boolean startDate:datetime endDate:datetime terminationDate:datetime
 
+&
 # User [User] //Devise - DNI email			
-	emp 		&
-	uName
-	contractor
-	active		
-	roleAssignment &
+	contractorBoolean:boolean
+	activeBoolean:boolean
+	employee:belongs_to
+	#### POST ####
+	userRole 												has_many :userRole
+rails g scaffold User contractorBoolean:boolean activeBoolean:boolean employee:belongs_to
 
-& # RoleAssignment
-	relationship between User and Role
+# Role
+	# owner|manager|employee
+	name:string
+	#### POST ####
+rails g scaffold Role name:string
 
-& # Role
-	# owner|manager|emp
-	title
+& 
+# UserRole
+	# relationship between User and Role
+	user:belongs_to
+	role:belongs_to
+	#### POST ####
+rails g scaffold UserRole user:belongs_to role:belongs_to
 
-# Term [Terminal]
-	fdxName
-	fdxNum
-	cName
-	cNum
+# Terminal
+	fedexTerminalName:string
+	fedexTerminalNumber:integer
+	contractorTerminalName:string
+	contractorTerminalNumber:integer
+	colocationBoolean:boolean
+	#### POST ####
+	notes														has_many :notes, :as => :notable
+rails g scaffold Terminal fedexTerminalName:string fedexTerminalNumber:integer contractorTerminalName:string contractorTerminalNumber:integer colocationBoolean:boolean
 
 # Region
-	fdxName
-	fdxNum
-	cName
-	cNum
+	fedexRegionName:string
+	fedexRegionNumber:integer
+	fedexRegionPhone:string
+	contractorRegionName:string
+	contractorRegionNumber:integer
+	#### POST ####
 
-& # PSA [Primary Service Area]
-	fdxName
-	fdxNum
-	cName
-	cNum
-	startDate
-	endDate
-	serviceType &
-	zips &
-	notes
+&
+# PSA [Primary Service Area]|[Primary Service Account]
+	fedexPSAName:string
+	fedexPSANumber:integer
+	contractorPSAName:string
+	contractorPSANumber:integer
+	activeBoolean:boolean
+	startDate:datetime
+	endDate:datetime
+	#### POST ####
+	notes 													has_many :notes, :as => :notable
+	serviceType 
+	zips 
+	terminal
+	state
+	region
 
-& # Zips
-	zip 	
+&
+# State
+	state:string
+	#### POST ####
 
-& # ServiceType
-	# ground|hd|lh|maintenance|rental|out-for-maintenance
+&
+# ZIPS
+	zip:string
+	#### POST ####
+
+&
+# ServiceType
+	# ground|hd|lh|maintenance|rental|out-for-maintenance|closed
 	ServiceType
+	#### POST ####
 
-& # VehicleFuel []
+&
+# VehicleFuel []
 	# gas|diesel|CNG
-	fuel
+	fuelType:string
+	#### POST ####
 
-& # VehicleType
+&
+# VehicleType
 	# p700|p1000|p1250
-	size
+	vehicleSize:string
 	# bulk or not?
-	bulk
+	bulkBoolean:boolean
+	#### POST ####
 
-& # Vehicle
-	cnum			
-	cname			
-	vin				
-	fdxnum		
-	VehicleType	&		
-	VehicleFuel &
+&
+# Vehicle
+	fedexVehicleNumber:integer
+	fedexVehicleName:string
+	contractorNumber:integer
+	contractorName:string
+	vin:string
+	startDate:datetime
+	endDate:datetime
+	activeBoolean:boolean
+	#### POST ####
 	notes
-	startDate
-	endDate	
-	active
+	vehicleType
+	vehicleFuel
+	vehicleMileage
 
-& # DailyData
-	d_stop		
-	d_pkg			
-	p_stop		
-	p_pkg			
-	calltag		
-	exceptions 	&
-	dna				
-	ils				
-	epu				
-	lpu				
-	startTime
-	endTime	
-	date			
+&
+# VehicleMileage
+	odometer:integer
+	#### POST ####
 
-& # Exceptions
-	exceptions
+&
+# DailyData
+	delivery_stop:integer
+	delivery_package:integer	
+	pickup_stop:integer
+	pickup_package:integer	
+	calltag:integer
+	didNotAttempt:integer	
+	inboundLocalService:decimal
+	earlyPickUp:integer
+	latePickUp:integer
+	startTime:datetime
+	endTime:datetime
+	#### POST ####
+	dailyDataExceptions
+	notes		
 
-& # EmpTerm
-	emp 		&
-	term    &
-	startDate
-	endDate
-	active			
+&
+# DailyDataExceptions
 
-& # EmpMgr
+	#### POST ####
+	dailyData 											belongs_to :dailyData
+	exceptions 											belongs_to :exceptions
+
+&
+# Exceptions
+	# Type of exceptions (code 03|05|07)
+	exceptionType:string
+	#### POST ####
+
+&
+# EmployeeTerminal
+	startDate:datetime
+	endDate:datetime
+	activeBoolean:boolean			
+	#### POST ####
+	employee
+	terminal
+
+&
+# EmployeeManager
+	startDate:datetime
+	endDate:datetime
+	activeBoolean:boolean
+	#### POST ####
+	employee
 	manager
-	emp
 
+&
+# EmployeeVehicle
+	startDate:datetime
+	endDate:datetime
+	activeBoolean:boolean
+	#### POST ####
+	employee
+	vehicle
 
-# EmpVehicle
-
-
-# EmpPSA
-
+&
+# EmployeePSA
+	startDate:datetime
+	endDate:datetime
+	activeBoolean:boolean
+	#### POST ####
+	employee
+	psa
 
 # FlatPayType
+# salary, hourly, pto, temp, bonus
+	flatPayName:string
+	#### POST ####
 
+# Frequency
+# Hourly, Weekly, Biweekly, Monthly
+	frequencyInterval:string
+	startDate:datetime
+	endDate:datetime
+	#### POST ####
 
-# Freq
-
-
+&
 # FlatPay
+	payAmount:decimal
+	startDate:datetime
+	endTime:datetime
+	activeBoolean:boolean
+	#### POST ####
+	employee
+	flatPayType
+	frequency
 
-
-# ProdPay
-
-
-# Notes
-
+&
+# ProductionPay
+	# $1.25 per stop, $0.15 per package
+	delivery_package:decimal
+	delivery_stop:decimal
+	pickup_package:decimal
+	pickup_stop:decimal
+	hours:integer
+	tasks:integer
+	startDate:datetime
+	endDate:datetime
+	activeBoolean:boolean
+	#### POST ####
+	employee
+	frequency
 
 # Thresholds
+	minimumPackages:integer
+	maximumPackages:integer
+	minimumStops:integer
+	maximumStops:integer
+	startDate:datetime
+	endDate:datetime
+	activeBoolean:boolean
+	#### POST ####
+	employee 
+
+# PSAThresholds
+
+	#### POST ####
+	psa 														belongs_to :psa
+	thresholds 											belongs_to :thresholds
 

@@ -7,10 +7,12 @@ capybara-*.html
 /vendor/bundle
 /log/*
 /tmp/*
-/db/*.sqlite3
 /public/system/*
 /coverage/
 /spec/tmp/*
 **.orig
 rerun.txt
 pickle-email-*.html
+
+#Once at a stable release, uncomment this
+#/db/*.sqlite3

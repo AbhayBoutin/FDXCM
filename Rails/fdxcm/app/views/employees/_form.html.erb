@@ -1,0 +1,57 @@
+<%= form_for(@employee) do |f| %>
+  <% if @employee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+
+      <ul>
+      <% @employee.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :firstName %><br />
+    <%= f.text_field :firstName %>
+  </div>
+  <div class="field">
+    <%= f.label :lastName %><br />
+    <%= f.text_field :lastName %>
+  </div>
+  <div class="field">
+    <%= f.label :fedexNumber %><br />
+    <%= f.number_field :fedexNumber %>
+  </div>
+  <div class="field">
+    <%= f.label :contractorNumber %><br />
+    <%= f.number_field :contractorNumber %>
+  </div>
+  <div class="field">
+    <%= f.label :hireDate %><br />
+    <%= f.date_select :hireDate %>
+  </div>
+  <div class="field">
+    <%= f.label :dateOfBirth %><br />
+    <%= f.date_select :dateOfBirth %>
+  </div>
+  <div class="field">
+    <%= f.label :activeBoolean %><br />
+    <%= f.check_box :activeBoolean %>
+  </div>
+  <div class="field">
+    <%= f.label :startDate %><br />
+    <%= f.datetime_select :startDate %>
+  </div>
+  <div class="field">
+    <%= f.label :endDate %><br />
+    <%= f.datetime_select :endDate %>
+  </div>
+  <div class="field">
+    <%= f.label :terminationDate %><br />
+    <%= f.datetime_select :terminationDate %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

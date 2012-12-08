@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  firstName: MyString
+  lastName: MyString
+  fedexNumber: 1
+  contractorNumber: 1
+  hireDate: 2012-12-08
+  dateOfBirth: 2012-12-08
+  activeBoolean: false
+  startDate: 2012-12-08 02:14:07
+  endDate: 2012-12-08 02:14:07
+  terminationDate: 2012-12-08 02:14:07
+
+two:
+  firstName: MyString
+  lastName: MyString
+  fedexNumber: 1
+  contractorNumber: 1
+  hireDate: 2012-12-08
+  dateOfBirth: 2012-12-08
+  activeBoolean: false
+  startDate: 2012-12-08 02:14:07
+  endDate: 2012-12-08 02:14:07
+  terminationDate: 2012-12-08 02:14:07

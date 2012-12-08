@@ -10,7 +10,7 @@
 # :time
 # :date
 # :binary
-# :boolean
+# :boolean 
 
 # New rails project in folder wanted
 rails new fedexcm
@@ -40,7 +40,7 @@ rails g scaffold Notes notable_id:integer notable_type:string content:text start
 	employeePSA
 	employeeVehicle
 	user 														has_one :user
-rails g scaffold Employee firstName:string lastName:string fedexNumber:integer contractorNumber:integer	hireDate:date	dateOfBirth:date activeBoolean:boolean startDate:datetime endDate:datetime terminationDate:datetime
+rails g scaffold Employee firstName:string lastName:string fedexNumber:integer contractorNumber:integer hireDate:date dateOfBirth:date activeBoolean:boolean startDate:datetime endDate:datetime terminationDate:datetime
 
 &
 # User [User] //Devise - DNI email			

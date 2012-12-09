@@ -1,0 +1,35 @@
+<h1>Listing fedex_contracts</h1>
+
+<table>
+  <tr>
+    <th>Fedexcontractname</th>
+    <th>Fedexcontractnumber</th>
+    <th>Contractorcontractname</th>
+    <th>Contractorcontractnumber</th>
+    <th>Content</th>
+    <th>Startdate</th>
+    <th>Enddate</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @fedex_contracts.each do |fedex_contract| %>
+  <tr>
+    <td><%= fedex_contract.fedexContractName %></td>
+    <td><%= fedex_contract.fedexContractNumber %></td>
+    <td><%= fedex_contract.contractorContractName %></td>
+    <td><%= fedex_contract.contractorContractNumber %></td>
+    <td><%= fedex_contract.content %></td>
+    <td><%= fedex_contract.startDate %></td>
+    <td><%= fedex_contract.endDate %></td>
+    <td><%= link_to 'Show', fedex_contract %></td>
+    <td><%= link_to 'Edit', edit_fedex_contract_path(fedex_contract) %></td>
+    <td><%= link_to 'Destroy', fedex_contract, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Fedex contract', new_fedex_contract_path %>

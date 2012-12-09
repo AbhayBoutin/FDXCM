@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121208071920) do
+ActiveRecord::Schema.define(:version => 20121209214512) do
+
+  create_table "addendums", :force => true do |t|
+    t.string   "fedexAddendumName"
+    t.integer  "fedexAddendumNumber"
+    t.string   "fedexContractorAddendumName"
+    t.integer  "fedexContractorAddendumNumber"
+    t.text     "content"
+    t.datetime "startDate"
+    t.datetime "endDate"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
 
   create_table "employees", :force => true do |t|
     t.string   "firstName"

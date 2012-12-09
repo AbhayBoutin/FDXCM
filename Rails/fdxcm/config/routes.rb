@@ -1,4 +1,6 @@
 Fdxcm::Application.routes.draw do
+  resources :addendums
+
   resources :regions
 
   resources :terminals

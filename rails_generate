@@ -1,3 +1,5 @@
+# Employee needs contact info | HR info
+
 #Migration native types
 #  :primary_key
 # :string
@@ -15,15 +17,17 @@
 # New rails project in folder wanted
 rails new fedexcm
 
-&
 # Notes # Polymorphic
 	notable_id:integer
 	notable_type:string
 	content:text
 	startDate:datetime
 	endDate:datetime
+	#### POST ####
+	# none
 rails g scaffold Notes notable_id:integer notable_type:string content:text startDate:datetime endDate:datetime
 
+&
 # Employee
 	firstName:string
 	lastName:string
@@ -55,6 +59,7 @@ rails g scaffold User contractorBoolean:boolean activeBoolean:boolean employee:b
 	# owner|manager|employee
 	name:string
 	#### POST ####
+	# none
 rails g scaffold Role name:string
 
 & 
@@ -63,8 +68,10 @@ rails g scaffold Role name:string
 	user:belongs_to
 	role:belongs_to
 	#### POST ####
+	# none
 rails g scaffold UserRole user:belongs_to role:belongs_to
 
+&
 # Terminal
 	fedexTerminalName:string
 	fedexTerminalNumber:integer
@@ -82,6 +89,37 @@ rails g scaffold Terminal fedexTerminalName:string fedexTerminalNumber:integer c
 	contractorRegionName:string
 	contractorRegionNumber:integer
 	#### POST ####
+	# none
+rails g scaffold Region fedexRegionName:string fedexRegionNumber:integer fedexRegionPhone:string contractorRegionName:string contractorRegionNumber:integer
+
+&
+# Addendum
+	fedexAddendumName:string
+	fedexAddendumNumber:integer
+	fedexContractorAddendumName:string
+	fedexContractorAddendumNumber:integer
+	content:text
+	startDate:datetime
+	endDate:datetime
+	#### POST ####
+	fedexContract 									belongs_to :fedexContract
+	notes 													has_many :notes, :as => :notable
+rails g scaffold Addendum fedexAddendumName:string fedexAddendumNumber:integer fedexContractorAddendumName:string fedexContractorAddendumNumber:integer content:text startDate:datetime endDate:datetime
+
+&
+# FedexContract
+	fedexContractName:string
+	fedexContractNumber:integer
+	contractorContractName:string
+	contractorContractNumber:integer
+	content:text
+	startDate:datetime
+	endDate:datetime
+	has_many:addendum
+	#### POST ####
+	employee
+	psa
+rails g scaffold fedexContractName:string fedexContractNumber:integer contractorContractName:string contractorContractNumber:integer content:text startDate:datetime endDate:datetime
 
 &
 # PSA [Primary Service Area]|[Primary Service Account]
@@ -99,6 +137,7 @@ rails g scaffold Terminal fedexTerminalName:string fedexTerminalNumber:integer c
 	terminal
 	state
 	region
+rails g scaffold PSA fedexPSAName:string fedexPSANumber:integer contractorPSAName:string contractorPSANumber:integer activeBoolean:boolean startDate:datetime endDate:datetime
 
 &
 # State

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Fueltype:</b>
+  <%= @vehicle_fuel.fuelType %>
+</p>
+
+<p>
+  <b>Fueltanksize:</b>
+  <%= @vehicle_fuel.fuelTankSize %>
+</p>
+
+<p>
+  <b>Mpg:</b>
+  <%= @vehicle_fuel.mpg %>
+</p>
+
+
+<%= link_to 'Edit', edit_vehicle_fuel_path(@vehicle_fuel) %> |
+<%= link_to 'Back', vehicle_fuels_path %>

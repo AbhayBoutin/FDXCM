@@ -1,4 +1,6 @@
 Fdxcm::Application.routes.draw do
+  resources :vehicle_fuels
+
   resources :service_types
 
   resources :employee_psas

@@ -1,0 +1,27 @@
+<h1>Listing vehicle_fuels</h1>
+
+<table>
+  <tr>
+    <th>Fueltype</th>
+    <th>Fueltanksize</th>
+    <th>Mpg</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @vehicle_fuels.each do |vehicle_fuel| %>
+  <tr>
+    <td><%= vehicle_fuel.fuelType %></td>
+    <td><%= vehicle_fuel.fuelTankSize %></td>
+    <td><%= vehicle_fuel.mpg %></td>
+    <td><%= link_to 'Show', vehicle_fuel %></td>
+    <td><%= link_to 'Edit', edit_vehicle_fuel_path(vehicle_fuel) %></td>
+    <td><%= link_to 'Destroy', vehicle_fuel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Vehicle fuel', new_vehicle_fuel_path %>

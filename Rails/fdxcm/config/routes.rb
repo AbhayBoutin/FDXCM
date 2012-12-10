@@ -1,4 +1,6 @@
 Fdxcm::Application.routes.draw do
+  resources :zips
+
   resources :psa_states
 
   resources :states

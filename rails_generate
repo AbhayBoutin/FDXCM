@@ -131,9 +131,10 @@ rails g scaffold FedexContract fedexContractName:string fedexContractNumber:inte
 	startDate:datetime
 	endDate:datetime
 	#### POST ####
-	notes 													has_many :notes, :as => :notable
+	notes 															has_many :notes, :as => :notable
 	serviceType
-	zips
+	zipState 														has_many :zips
+	zip 																has_many :zips, :through => psaZIPS
 	terminal
 	psaState 														has_many :psaStates
 	state 															has_many :states, :through => psaStates
@@ -146,10 +147,9 @@ rails g scaffold PSA fedexPSAName:string fedexPSANumber:integer contractorPSANam
 	abbreviation:string
 	psa:belongs_to
 	#### POST ####
-	psaState:has_many										has_many:psaStates
+	psaState 														has_many:psaStates
 rails g scaffold State state:string abbreviation:string psa:belongs_to
 
-&
 # PSAState
 	psa:belongs_to
 	state:belongs_to
@@ -158,9 +158,19 @@ rails g scaffold State state:string abbreviation:string psa:belongs_to
 rails g scaffold PSAState psa:belongs_to state:belongs_to
 
 &
-# ZIPS
+# ZIP
 	zip:string
+	psa:belongs_to
 	#### POST ####
+	zipState 														has_many:zipStates
+rails g scaffold zip:string psa:belongs_to
+
+# ZIPState
+	psa:belongs_to
+	zip:belongs_to
+	#### POST ####
+	# none
+rails g scaffold psa:belongs_to zip:belongs_to
 
 &
 # ServiceType

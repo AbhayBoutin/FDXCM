@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121210090429) do
+ActiveRecord::Schema.define(:version => 20121210094151) do
 
   create_table "addendums", :force => true do |t|
     t.string   "fedexAddendumName"
@@ -121,6 +121,14 @@ ActiveRecord::Schema.define(:version => 20121210090429) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "service_types", :force => true do |t|
+    t.string   "serviceType"
+    t.datetime "startDate"
+    t.datetime "endDate"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "states", :force => true do |t|

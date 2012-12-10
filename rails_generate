@@ -181,19 +181,27 @@ rails g scaffold PSAZIP psa:belongs_to zip:belongs_to
 	employee:belongs_to
 	psa:belongs_to
 	#### POST ####
+	# none
 rails g scaffold EmployeePSA startDate:datetime endDate:datetime activeBoolean:boolean employee:belongs_to psa:belongs_to
 
 &
 # ServiceType
 	# ground|hd|lh|maintenance|rental|out-for-maintenance|closed
-	ServiceType
+	serviceType:string
+	startDate:datetime
+	endDate:datetime
 	#### POST ####
+	vehicle 														belongs_to:vehicle
+rails g scaffold ServiceType serviceType:string startDate:datetime endDate:datetime
 
 &
 # VehicleFuel []
 	# gas|diesel|CNG
 	fuelType:string
+	fuelTankSize:integer
 	#### POST ####
+	vehicle 														belongs_to:vehicle
+
 
 &
 # VehicleType
@@ -202,6 +210,17 @@ rails g scaffold EmployeePSA startDate:datetime endDate:datetime activeBoolean:b
 	# bulk or not?
 	bulkBoolean:boolean
 	#### POST ####
+	vehicle 														belongs_to:vehicle
+
+
+&
+# VehicleOdometer
+	odometerReading:integer
+	startDate:datetime
+	endDate:datetime
+	#### POST ####
+	vehicle 														belongs_to:vehicle
+
 
 &
 # Vehicle
@@ -213,16 +232,12 @@ rails g scaffold EmployeePSA startDate:datetime endDate:datetime activeBoolean:b
 	startDate:datetime
 	endDate:datetime
 	activeBoolean:boolean
+	vehicleType:has_one
+	vehicleFuel:has_one
+	vehicleOdometer:has_one
 	#### POST ####
-	notes
-	vehicleType
-	vehicleFuel
-	vehicleMileage
+	notes 													has_many :notes, :as => :notable
 
-&
-# VehicleMileage
-	odometer:integer
-	#### POST ####
 
 &
 # DailyData

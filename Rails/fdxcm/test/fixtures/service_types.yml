@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  serviceType: MyString
+  startDate: 2012-12-10 04:41:51
+  endDate: 2012-12-10 04:41:51
+
+two:
+  serviceType: MyString
+  startDate: 2012-12-10 04:41:51
+  endDate: 2012-12-10 04:41:51

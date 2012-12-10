@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  state: MyString
+  abbreviation: MyString
+  psa: 
+
+two:
+  state: MyString
+  abbreviation: MyString
+  psa: 

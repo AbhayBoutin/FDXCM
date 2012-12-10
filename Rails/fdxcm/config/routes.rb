@@ -1,4 +1,6 @@
 Fdxcm::Application.routes.draw do
+  resources :states
+
   resources :psas
 
   resources :fedex_contracts

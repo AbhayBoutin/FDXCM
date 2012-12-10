@@ -1,0 +1,25 @@
+<h1>Listing psa_states</h1>
+
+<table>
+  <tr>
+    <th>Psa</th>
+    <th>State</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @psa_states.each do |psa_state| %>
+  <tr>
+    <td><%= psa_state.psa %></td>
+    <td><%= psa_state.state %></td>
+    <td><%= link_to 'Show', psa_state %></td>
+    <td><%= link_to 'Edit', edit_psa_state_path(psa_state) %></td>
+    <td><%= link_to 'Destroy', psa_state, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Psa state', new_psa_state_path %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121210031835) do
+ActiveRecord::Schema.define(:version => 20121210031949) do
 
   create_table "addendums", :force => true do |t|
     t.string   "fedexAddendumName"
@@ -61,6 +61,16 @@ ActiveRecord::Schema.define(:version => 20121210031835) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
+
+  create_table "psa_states", :force => true do |t|
+    t.integer  "psa_id"
+    t.integer  "state_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "psa_states", ["psa_id"], :name => "index_psa_states_on_psa_id"
+  add_index "psa_states", ["state_id"], :name => "index_psa_states_on_state_id"
 
   create_table "psas", :force => true do |t|
     t.string   "fedexPSAName"

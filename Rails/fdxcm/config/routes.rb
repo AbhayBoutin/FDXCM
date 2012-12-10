@@ -1,4 +1,6 @@
 Fdxcm::Application.routes.draw do
+  resources :employee_psas
+
   resources :psazips
 
   resources :zips

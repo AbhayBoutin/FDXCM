@@ -116,7 +116,7 @@ rails g scaffold Addendum fedexAddendumName:string fedexAddendumNumber:integer f
 	endDate:datetime
 	has_many:addendum
 	#### POST ####
-*	employee 												has_one :employee
+*	employee 												has_many :employees
 *	psa 														has_many :psas
 rails g scaffold FedexContract fedexContractName:string fedexContractNumber:integer contractorContractName:string contractorContractNumber:integer content:text startDate:datetime endDate:datetime
 
@@ -132,11 +132,13 @@ rails g scaffold FedexContract fedexContractName:string fedexContractNumber:inte
 	#### POST ####
 	notes 															has_many :notes, :as => :notable
 	serviceType
-	psaZIPS 														has_many :psaZIPS
-	zip 																has_many :zips, :through => psaZIPS
+*	psaZIPS 														has_many :psaZIPs
+*	zip 																has_many :zips, :through => psaZIPS
 	terminal
-	psaState 														has_many :psaStates
-	state 															has_many :states, :through => psaStates
+*	psaState 														has_many :psaStates
+*	state 															has_many :states, :through => psaStates
+	employeePSA 												has_many :employeePSAs
+	employee 														has_many :employees, :through => employeePSAs
 	region
 rails g scaffold PSA fedexPSAName:string fedexPSANumber:integer contractorPSAName:string contractorPSANumber:integer activeBoolean:boolean startDate:datetime endDate:datetime
 
@@ -146,7 +148,7 @@ rails g scaffold PSA fedexPSAName:string fedexPSANumber:integer contractorPSANam
 	abbreviation:string
 	psa:belongs_to
 	#### POST ####
-	psaState 														has_many:psaStates
+*	psaState 														has_many:psaStates
 rails g scaffold State state:string abbreviation:string psa:belongs_to
 
 # PSAState
@@ -161,7 +163,7 @@ rails g scaffold PSAState psa:belongs_to state:belongs_to
 	zip:string
 	psa:belongs_to
 	#### POST ####
-	psaZIPS 														has_many:psaZIPS
+*	psaZIPS 														has_many:psaZIPS
 rails g scaffold ZIP zip:string psa:belongs_to
 
 # PSAZIP
@@ -176,9 +178,10 @@ rails g scaffold PSAZIP psa:belongs_to zip:belongs_to
 	startDate:datetime
 	endDate:datetime
 	activeBoolean:boolean
+	employee:belongs_to
+	psa:belongs_to
 	#### POST ####
-	employee
-	psa
+rails g scaffold EmployeePSA startDate:datetime endDate:datetime activeBoolean:boolean employee:belongs_to psa:belongs_to
 
 &
 # ServiceType

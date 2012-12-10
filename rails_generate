@@ -116,8 +116,8 @@ rails g scaffold Addendum fedexAddendumName:string fedexAddendumNumber:integer f
 	endDate:datetime
 	has_many:addendum
 	#### POST ####
-	employee
-	psa
+*	employee 												has_one :employee
+*	psa 														has_many :psas
 rails g scaffold FedexContract fedexContractName:string fedexContractNumber:integer contractorContractName:string contractorContractNumber:integer content:text startDate:datetime endDate:datetime
 
 &
@@ -170,6 +170,15 @@ rails g scaffold ZIP zip:string psa:belongs_to
 	#### POST ####
 	# none
 rails g scaffold PSAZIP psa:belongs_to zip:belongs_to
+
+&
+# EmployeePSA
+	startDate:datetime
+	endDate:datetime
+	activeBoolean:boolean
+	#### POST ####
+	employee
+	psa
 
 &
 # ServiceType
@@ -268,15 +277,6 @@ rails g scaffold PSAZIP psa:belongs_to zip:belongs_to
 	#### POST ####
 	employee
 	vehicle
-
-&
-# EmployeePSA
-	startDate:datetime
-	endDate:datetime
-	activeBoolean:boolean
-	#### POST ####
-	employee
-	psa
 
 # FlatPayType
 # salary, hourly, pto, temp, bonus

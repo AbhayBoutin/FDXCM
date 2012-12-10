@@ -119,7 +119,7 @@ rails g scaffold Addendum fedexAddendumName:string fedexAddendumNumber:integer f
 	#### POST ####
 	employee
 	psa
-rails g scaffold fedexContractName:string fedexContractNumber:integer contractorContractName:string contractorContractNumber:integer content:text startDate:datetime endDate:datetime
+rails g scaffold FedexContract fedexContractName:string fedexContractNumber:integer contractorContractName:string contractorContractNumber:integer content:text startDate:datetime endDate:datetime
 
 &
 # PSA [Primary Service Area]|[Primary Service Account]
@@ -132,17 +132,30 @@ rails g scaffold fedexContractName:string fedexContractNumber:integer contractor
 	endDate:datetime
 	#### POST ####
 	notes 													has_many :notes, :as => :notable
-	serviceType 
-	zips 
+	serviceType
+	zips
 	terminal
-	state
+	psaState 														has_many :psaStates
+	state 															has_many :states, :through => psaStates
 	region
 rails g scaffold PSA fedexPSAName:string fedexPSANumber:integer contractorPSAName:string contractorPSANumber:integer activeBoolean:boolean startDate:datetime endDate:datetime
 
 &
 # State
 	state:string
+	abbreviation:string
+	psa:belongs_to
 	#### POST ####
+	psaState:has_many										has_many:psaStates
+rails g scaffold State state:string abbreviation:string psa:belongs_to
+
+&
+# PSAState
+	psa:belongs_to
+	state:belongs_to
+	#### POST ####
+	# none
+rails g scaffold PSAState psa:belongs_to state:belongs_to
 
 &
 # ZIPS
@@ -212,10 +225,10 @@ rails g scaffold PSA fedexPSAName:string fedexPSANumber:integer contractorPSANam
 
 	#### POST ####
 	dailyData 											belongs_to :dailyData
-	exceptions 											belongs_to :exceptions
+	exception 											belongs_to :exception
 
 &
-# Exceptions
+# Exception
 	# Type of exceptions (code 03|05|07)
 	exceptionType:string
 	#### POST ####

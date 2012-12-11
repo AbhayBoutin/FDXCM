@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121210094500) do
+ActiveRecord::Schema.define(:version => 20121211061136) do
 
   create_table "addendums", :force => true do |t|
     t.string   "fedexAddendumName"
@@ -177,6 +177,14 @@ ActiveRecord::Schema.define(:version => 20121210094500) do
     t.integer  "mpg"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "vehicle_odometers", :force => true do |t|
+    t.integer  "odometerReading"
+    t.datetime "startDate"
+    t.datetime "endDate"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "vehicle_types", :force => true do |t|

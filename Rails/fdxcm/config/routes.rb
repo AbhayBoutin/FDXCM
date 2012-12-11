@@ -1,4 +1,6 @@
 Fdxcm::Application.routes.draw do
+  resources :vehicles
+
   resources :vehicle_odometers
 
   resources :vehicle_types

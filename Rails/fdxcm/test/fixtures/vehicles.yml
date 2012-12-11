@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  fedexVehicleNumber: 1
+  fedexVehicleName: MyString
+  contractorNumber: 1
+  contractorName: MyString
+  vin: MyString
+  startDate: 2012-12-11 01:20:31
+  endDate: 2012-12-11 01:20:31
+  activeBoolean: false
+
+two:
+  fedexVehicleNumber: 1
+  fedexVehicleName: MyString
+  contractorNumber: 1
+  contractorName: MyString
+  vin: MyString
+  startDate: 2012-12-11 01:20:31
+  endDate: 2012-12-11 01:20:31
+  activeBoolean: false

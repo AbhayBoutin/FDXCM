@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121211061136) do
+ActiveRecord::Schema.define(:version => 20121211062031) do
 
   create_table "addendums", :force => true do |t|
     t.string   "fedexAddendumName"
@@ -192,6 +192,19 @@ ActiveRecord::Schema.define(:version => 20121211061136) do
     t.boolean  "bulkBoolean"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "vehicles", :force => true do |t|
+    t.integer  "fedexVehicleNumber"
+    t.string   "fedexVehicleName"
+    t.integer  "contractorNumber"
+    t.string   "contractorName"
+    t.string   "vin"
+    t.datetime "startDate"
+    t.datetime "endDate"
+    t.boolean  "activeBoolean"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   create_table "zips", :force => true do |t|

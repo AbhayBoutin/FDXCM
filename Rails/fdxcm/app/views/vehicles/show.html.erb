@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Fedexvehiclenumber:</b>
+  <%= @vehicle.fedexVehicleNumber %>
+</p>
+
+<p>
+  <b>Fedexvehiclename:</b>
+  <%= @vehicle.fedexVehicleName %>
+</p>
+
+<p>
+  <b>Contractornumber:</b>
+  <%= @vehicle.contractorNumber %>
+</p>
+
+<p>
+  <b>Contractorname:</b>
+  <%= @vehicle.contractorName %>
+</p>
+
+<p>
+  <b>Vin:</b>
+  <%= @vehicle.vin %>
+</p>
+
+<p>
+  <b>Startdate:</b>
+  <%= @vehicle.startDate %>
+</p>
+
+<p>
+  <b>Enddate:</b>
+  <%= @vehicle.endDate %>
+</p>
+
+<p>
+  <b>Activeboolean:</b>
+  <%= @vehicle.activeBoolean %>
+</p>
+
+
+<%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |
+<%= link_to 'Back', vehicles_path %>

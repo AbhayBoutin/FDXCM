@@ -11,6 +11,4 @@ remove from ZIP `psa:belongs_to` from gerenation and place in post `	psa:belongs
 
 
 MIGRATIONS
-Class: states
-	remove psa_id from 
-	
+remove

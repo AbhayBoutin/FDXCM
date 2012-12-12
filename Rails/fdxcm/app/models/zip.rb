@@ -1,6 +1,6 @@
 class Zip < ActiveRecord::Base
-  belongs_to :psa
   attr_accessible :zip
 
   has_many:psazips
+  has_many:psas, :through => :psazips
 end

@@ -133,7 +133,7 @@ rails g scaffold FedexContract fedexContractName:string fedexContractNumber:inte
 	notes 															has_many :notes, :as => :notable
 	serviceType
 *	psaZIPS 														has_many :psaZIPs
-*	zip 																has_many :zips, :through => psaZIPS
+*	zip 																has_many :zips, :through => :psaZIPS
 	terminal
 *	psaState 														has_many :psaStates
 *	state 															has_many :states, :through => psaStates
@@ -146,10 +146,10 @@ rails g scaffold PSA fedexPSAName:string fedexPSANumber:integer contractorPSANam
 # State
 	state:string
 	abbreviation:string
-	psa:belongs_to
 	#### POST ####
-*	psaState 														has_many:psaStates
-rails g scaffold State state:string abbreviation:string psa:belongs_to
+*	psaState 														has_many:states, :through => :psaStates
+																			has_many:psaStates
+rails g scaffold State state:string abbreviation:string psa:has_many
 
 # PSAState
 	psa:belongs_to
@@ -161,10 +161,10 @@ rails g scaffold PSAState psa:belongs_to state:belongs_to
 &
 # ZIP
 	zip:string
-	psa:belongs_to
 	#### POST ####
-*	psaZIPS 														has_many:psaZIPS
-rails g scaffold ZIP zip:string psa:belongs_to
+*	psazips 														has_many:psazips
+	psa 																has_many:psas, :through => :psazips
+rails g scaffold ZIP zip:string
 
 # PSAZIP
 	psa:belongs_to
@@ -199,9 +199,10 @@ rails g scaffold ServiceType serviceType:string startDate:datetime endDate:datet
 	# gas|diesel|CNG
 	fuelType:string
 	fuelTankSize:integer
+	mpg:integer
 	#### POST ####
 	vehicle 														belongs_to:vehicle
-
+rails g scaffold VehicleFuel fuelType:string fuelTankSize:integer mpg:integer
 
 &
 # VehicleType
@@ -209,9 +210,11 @@ rails g scaffold ServiceType serviceType:string startDate:datetime endDate:datet
 	vehicleSize:string
 	# bulk or not?
 	bulkBoolean:boolean
+	bodyMake:string
+	bodyModel:string
 	#### POST ####
 	vehicle 														belongs_to:vehicle
-
+rails g scaffold VehicleType vehicleSize:string bulkBoolean:boolean bodyMake:string bodyModel:string
 
 &
 # VehicleOdometer
@@ -220,7 +223,7 @@ rails g scaffold ServiceType serviceType:string startDate:datetime endDate:datet
 	endDate:datetime
 	#### POST ####
 	vehicle 														belongs_to:vehicle
-
+rails g scaffold VehicleOdometer odometerReading:integer startDate:datetime endDate:datetime
 
 &
 # Vehicle
@@ -232,12 +235,21 @@ rails g scaffold ServiceType serviceType:string startDate:datetime endDate:datet
 	startDate:datetime
 	endDate:datetime
 	activeBoolean:boolean
+	#### POST ####
+	notes 													has_many :notes, :as => :notable
+	dailydata 											belongs_to :dailydata
+	dailyDataVehicle 								has_many :dailyDataVehicle
 	vehicleType:has_one
 	vehicleFuel:has_one
 	vehicleOdometer:has_one
-	#### POST ####
-	notes 													has_many :notes, :as => :notable
+rails g scaffold Vehicle fedexVehicleNumber:integer fedexVehicleName:string contractorNumber:integer contractorName:string vin:string startDate:datetime endDate:datetime activeBoolean:boolean vehicleType:has_one vehicleFuel:has_one vehicleOdometer:has_one
 
+&
+# DailyDataVehicle
+	vehicle:belongs_to
+	#### POST ####
+	dailyData 										belongs_to :dailyData
+rails g DailyDataVehicle vehicle:belongs_to
 
 &
 # DailyData
@@ -252,9 +264,11 @@ rails g scaffold ServiceType serviceType:string startDate:datetime endDate:datet
 	latePickUp:integer
 	startTime:datetime
 	endTime:datetime
+	vehicle:belongs_to
 	#### POST ####
 	dailyDataExceptions
 	notes		
+	dailyDataVehicle 								has_many :dailyDataVehicle, => :through 
 
 &
 # DailyDataExceptions

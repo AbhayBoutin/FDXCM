@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121209214940) do
+ActiveRecord::Schema.define(:version => 20121212070724) do
 
   create_table "addendums", :force => true do |t|
     t.string   "fedexAddendumName"
@@ -88,6 +88,13 @@ ActiveRecord::Schema.define(:version => 20121209214940) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "states", :force => true do |t|
+    t.string   "state"
+    t.string   "abbreviation"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "terminals", :force => true do |t|

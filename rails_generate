@@ -52,7 +52,7 @@ rails g scaffold Employee firstName:string lastName:string fedexNumber:integer c
 	activeBoolean:boolean
 	employee:belongs_to
 	#### POST ####
-*	userRole 												has_many :userRole
+*	userRole 												has_many :userRoles
 rails g scaffold User contractorBoolean:boolean activeBoolean:boolean employee:belongs_to
 
 # Role
@@ -172,7 +172,7 @@ rails g scaffold ZIP zip:string
 	#### POST ####
 	# none
 rails g scaffold PSAZIP psa:belongs_to zip:belongs_to
-
+***
 &
 # EmployeePSA
 	startDate:datetime

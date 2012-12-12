@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121212072517) do
+ActiveRecord::Schema.define(:version => 20121212072611) do
 
   create_table "addendums", :force => true do |t|
     t.string   "fedexAddendumName"
@@ -83,6 +83,16 @@ ActiveRecord::Schema.define(:version => 20121212072517) do
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
   end
+
+  create_table "psazips", :force => true do |t|
+    t.integer  "psa_id"
+    t.integer  "zip_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "psazips", ["psa_id"], :name => "index_psazips_on_psa_id"
+  add_index "psazips", ["zip_id"], :name => "index_psazips_on_zip_id"
 
   create_table "regions", :force => true do |t|
     t.string   "fedexRegionName"

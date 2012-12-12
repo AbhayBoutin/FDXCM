@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121212072611) do
+ActiveRecord::Schema.define(:version => 20121212081655) do
 
   create_table "addendums", :force => true do |t|
     t.string   "fedexAddendumName"
@@ -24,6 +24,19 @@ ActiveRecord::Schema.define(:version => 20121212072611) do
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
   end
+
+  create_table "employee_psas", :force => true do |t|
+    t.datetime "startDate"
+    t.datetime "endDate"
+    t.boolean  "activeBoolean"
+    t.integer  "employee_id"
+    t.integer  "psa_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "employee_psas", ["employee_id"], :name => "index_employee_psas_on_employee_id"
+  add_index "employee_psas", ["psa_id"], :name => "index_employee_psas_on_psa_id"
 
   create_table "employees", :force => true do |t|
     t.string   "firstName"
@@ -110,6 +123,14 @@ ActiveRecord::Schema.define(:version => 20121212072611) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "service_types", :force => true do |t|
+    t.string   "serviceType"
+    t.datetime "startDate"
+    t.datetime "endDate"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "states", :force => true do |t|
     t.string   "state"
     t.string   "abbreviation"
@@ -146,6 +167,55 @@ ActiveRecord::Schema.define(:version => 20121212072611) do
   end
 
   add_index "users", ["employee_id"], :name => "index_users_on_employee_id"
+
+  create_table "vehicle_fuels", :force => true do |t|
+    t.string   "fuelType"
+    t.integer  "fuelTankSize"
+    t.integer  "mpg"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "vehicle_odometers", :force => true do |t|
+    t.integer  "odometerReading"
+    t.datetime "startDate"
+    t.datetime "endDate"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "vehicle_types", :force => true do |t|
+    t.string   "vehicleSize"
+    t.boolean  "bulkBoolean"
+    t.string   "bodyMake"
+    t.string   "bodyModel"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "vehicles", :force => true do |t|
+    t.integer  "fedexVehicleNumber"
+    t.string   "fedexVehicleName"
+    t.integer  "contractorNumber"
+    t.string   "contractorName"
+    t.string   "vin"
+    t.datetime "startDate"
+    t.datetime "endDate"
+    t.boolean  "activeBoolean"
+    t.integer  "vehicleType_id"
+    t.integer  "vehicleFuel_id"
+    t.integer  "vehicleOdometer_id"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.integer  "service_type_id"
+    t.integer  "vehicle_type_id"
+    t.integer  "vehicle_fuel_id"
+    t.integer  "vehicle_odometer_id"
+  end
+
+  add_index "vehicles", ["vehicleFuel_id"], :name => "index_vehicles_on_vehicleFuel_id"
+  add_index "vehicles", ["vehicleOdometer_id"], :name => "index_vehicles_on_vehicleOdometer_id"
+  add_index "vehicles", ["vehicleType_id"], :name => "index_vehicles_on_vehicleType_id"
 
   create_table "zips", :force => true do |t|
     t.string   "zip"

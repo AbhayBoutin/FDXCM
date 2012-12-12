@@ -172,7 +172,7 @@ rails g scaffold ZIP zip:string
 	#### POST ####
 	# none
 rails g scaffold PSAZIP psa:belongs_to zip:belongs_to
-***
+
 &
 # EmployeePSA
 	startDate:datetime
@@ -191,7 +191,7 @@ rails g scaffold EmployeePSA startDate:datetime endDate:datetime activeBoolean:b
 	startDate:datetime
 	endDate:datetime
 	#### POST ####
-	vehicle 														belongs_to:vehicle
+	vehicle 														has_many:vehicles
 rails g scaffold ServiceType serviceType:string startDate:datetime endDate:datetime
 
 &
@@ -201,7 +201,7 @@ rails g scaffold ServiceType serviceType:string startDate:datetime endDate:datet
 	fuelTankSize:integer
 	mpg:integer
 	#### POST ####
-	vehicle 														belongs_to:vehicle
+	vehicle 														has_many:vehicles
 rails g scaffold VehicleFuel fuelType:string fuelTankSize:integer mpg:integer
 
 &
@@ -213,7 +213,7 @@ rails g scaffold VehicleFuel fuelType:string fuelTankSize:integer mpg:integer
 	bodyMake:string
 	bodyModel:string
 	#### POST ####
-	vehicle 														belongs_to:vehicle
+	vehicle 														has_many:vehicle
 rails g scaffold VehicleType vehicleSize:string bulkBoolean:boolean bodyMake:string bodyModel:string
 
 &
@@ -222,7 +222,7 @@ rails g scaffold VehicleType vehicleSize:string bulkBoolean:boolean bodyMake:str
 	startDate:datetime
 	endDate:datetime
 	#### POST ####
-	vehicle 														belongs_to:vehicle
+	vehicle 														has_many:vehicle
 rails g scaffold VehicleOdometer odometerReading:integer startDate:datetime endDate:datetime
 
 &
@@ -235,15 +235,16 @@ rails g scaffold VehicleOdometer odometerReading:integer startDate:datetime endD
 	startDate:datetime
 	endDate:datetime
 	activeBoolean:boolean
+	vehicleType:references
+	vehicleFuel:references
+	vehicleOdometer:references
 	#### POST ####
 	notes 													has_many :notes, :as => :notable
 	dailydata 											belongs_to :dailydata
 	dailyDataVehicle 								has_many :dailyDataVehicle
-	vehicleType:has_one
-	vehicleFuel:has_one
-	vehicleOdometer:has_one
-rails g scaffold Vehicle fedexVehicleNumber:integer fedexVehicleName:string contractorNumber:integer contractorName:string vin:string startDate:datetime endDate:datetime activeBoolean:boolean vehicleType:has_one vehicleFuel:has_one vehicleOdometer:has_one
 
+rails g scaffold Vehicle fedexVehicleNumber:integer fedexVehicleName:string contractorNumber:integer contractorName:string vin:string startDate:datetime endDate:datetime activeBoolean:boolean vehicleType:references vehicleFuel:references vehicleOdometer:references
+***
 &
 # DailyDataVehicle
 	vehicle:belongs_to
@@ -366,3 +367,13 @@ rails g DailyDataVehicle vehicle:belongs_to
 	psa 														belongs_to :psa
 	thresholds 											belongs_to :thresholds
 
+
+# MIGRATIONS
+ServiceType
+	rails g migration AddServiceTypeToVehicle
+VehicleFuel
+	rails g migration AddVehicleFuelToVehicle
+VehicleType
+	rails g migration AddVehicleTypeToVehicle
+VehicleOdometer
+	rails g migration AddVehicleOdometerToVehicle

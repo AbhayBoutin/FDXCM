@@ -1,0 +1,29 @@
+<%= form_for(@vehicle_odometer) do |f| %>
+  <% if @vehicle_odometer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vehicle_odometer.errors.count, "error") %> prohibited this vehicle_odometer from being saved:</h2>
+
+      <ul>
+      <% @vehicle_odometer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :odometerReading %><br />
+    <%= f.number_field :odometerReading %>
+  </div>
+  <div class="field">
+    <%= f.label :startDate %><br />
+    <%= f.datetime_select :startDate %>
+  </div>
+  <div class="field">
+    <%= f.label :endDate %><br />
+    <%= f.datetime_select :endDate %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

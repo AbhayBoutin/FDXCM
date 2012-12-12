@@ -1,4 +1,17 @@
 Fdxcm::Application.routes.draw do
+
+  resources :vehicles
+
+  resources :vehicle_odometers
+
+  resources :vehicle_types
+
+  resources :vehicle_fuels
+
+  resources :service_types
+
+  resources :employee_psas
+
   resources :psazips
 
   resources :zips

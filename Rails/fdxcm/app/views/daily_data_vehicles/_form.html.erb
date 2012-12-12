@@ -1,0 +1,21 @@
+<%= form_for(@daily_data_vehicle) do |f| %>
+  <% if @daily_data_vehicle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@daily_data_vehicle.errors.count, "error") %> prohibited this daily_data_vehicle from being saved:</h2>
+
+      <ul>
+      <% @daily_data_vehicle.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :vehicle %><br />
+    <%= f.text_field :vehicle %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

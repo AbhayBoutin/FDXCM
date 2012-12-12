@@ -235,9 +235,10 @@ rails g scaffold VehicleOdometer odometerReading:integer startDate:datetime endD
 	startDate:datetime
 	endDate:datetime
 	activeBoolean:boolean
-	vehicleType:references
-	vehicleFuel:references
-	vehicleOdometer:references
+	serviceType:references 			
+	vehicleType:references 			
+	vehicleFuel:references 			
+	vehicleOdometer:references 	Handled in references Migration
 	#### POST ####
 	notes 													has_many :notes, :as => :notable
 	dailydata 											belongs_to :dailydata

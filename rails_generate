@@ -241,11 +241,11 @@ rails g scaffold VehicleOdometer odometerReading:integer startDate:datetime endD
 	vehicleOdometer:references 	Handled in references Migration
 	#### POST ####
 	notes 													has_many :notes, :as => :notable
-	dailydata 											belongs_to :dailydata
 	dailyDataVehicle 								has_many :dailyDataVehicle
-
+	dailydata 											has_many :dailydata, :through => :dailyDataVehicles
+	
 rails g scaffold Vehicle fedexVehicleNumber:integer fedexVehicleName:string contractorNumber:integer contractorName:string vin:string startDate:datetime endDate:datetime activeBoolean:boolean vehicleType:references vehicleFuel:references vehicleOdometer:references
-***
+
 &
 # DailyDataVehicle
 	vehicle:belongs_to
@@ -270,7 +270,11 @@ rails g DailyDataVehicle vehicle:belongs_to
 	#### POST ####
 	dailyDataExceptions
 	notes		
-	dailyDataVehicle 								has_many :dailyDataVehicle, => :through 
+	dailyDataVehicle 								has_many :dailyDataVehicles
+	vehicles 												has_many :vehicles, :through => :dailyDataVehicles 
+rails g scaffold DailyData deliveryStop:integer deliveryPackage:integer pickupStop:integer pickupPackage:integer calltag:integer didNotAttempt:integer inboundLocalService:decimal earlyPickUp:integer latePickUp:integer startTime:datetime endTime:datetime
+***
+
 
 &
 # DailyDataExceptions

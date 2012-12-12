@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  deliveryStop: 1
+  deliveryPackage: 1
+  pickupStop: 1
+  pickupPackage: 1
+  calltag: 1
+  didNotAttempt: 1
+  inboundLocalService: 9.99
+  earlyPickUp: 1
+  latePickUp: 1
+  startTime: 2012-12-12 16:46:02
+  endTime: 2012-12-12 16:46:02
+
+two:
+  deliveryStop: 1
+  deliveryPackage: 1
+  pickupStop: 1
+  pickupPackage: 1
+  calltag: 1
+  didNotAttempt: 1
+  inboundLocalService: 9.99
+  earlyPickUp: 1
+  latePickUp: 1
+  startTime: 2012-12-12 16:46:02
+  endTime: 2012-12-12 16:46:02

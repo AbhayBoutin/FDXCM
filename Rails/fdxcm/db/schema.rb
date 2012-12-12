@@ -205,12 +205,9 @@ ActiveRecord::Schema.define(:version => 20121212081655) do
     t.integer  "vehicleType_id"
     t.integer  "vehicleFuel_id"
     t.integer  "vehicleOdometer_id"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.integer  "service_type_id"
-    t.integer  "vehicle_type_id"
-    t.integer  "vehicle_fuel_id"
-    t.integer  "vehicle_odometer_id"
   end
 
   add_index "vehicles", ["vehicleFuel_id"], :name => "index_vehicles_on_vehicleFuel_id"

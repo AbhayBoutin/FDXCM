@@ -1,0 +1,37 @@
+DB Relationships by example
+
+PSA _X_ State
+	Many to Many
+		Description
+			PSA.c1
+			PSA is related ot multiple States
+				States
+					State NC is related to psa.c1 and psa.c2
+					psa.c1 is for state NC
+					psa.c1 is for state SC
+
+			PSA.c2
+			States
+				NC
+					State NC is related to psa.c1 and psa.c2
+					psa.c2 is for state NC
+
+		Schema
+			PSA
+			  create_table "psas", :force => true do |t|
+			  	PSA COLUMN DATA
+			  end
+			State
+			  create_table "states", :force => true do |t|
+			  	STATE COLUMN DATA
+			  end
+			PSAState
+			  create_table "psa_states", :force => true do |t|
+			  	PSA REFERENCE DATA
+			  	STATE REFERENCE DATA
+			  end
+
+
+			  LATER
+			  add_index "psa_states", ["psa_id"], :name => "index_psa_states_on_psa_id"
+			  add_index "psa_states", ["state_id"], :name => "index_psa_states_on_state_id"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121212071803) do
+ActiveRecord::Schema.define(:version => 20121212072517) do
 
   create_table "addendums", :force => true do |t|
     t.string   "fedexAddendumName"
@@ -136,5 +136,11 @@ ActiveRecord::Schema.define(:version => 20121212071803) do
   end
 
   add_index "users", ["employee_id"], :name => "index_users_on_employee_id"
+
+  create_table "zips", :force => true do |t|
+    t.string   "zip"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end

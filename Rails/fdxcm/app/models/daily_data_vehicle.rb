@@ -2,5 +2,5 @@ class DailyDataVehicle < ActiveRecord::Base
   belongs_to :vehicle
   # attr_accessible :title, :body
 
-  belongs_to :dailyData
+  belongs_to :dailyDatum
 end

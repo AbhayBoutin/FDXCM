@@ -44,6 +44,8 @@ rails g scaffold Notes notable_id:integer notable_type:string content:text start
 	employeePSA
 	employeeVehicle
 *	user 														has_one :user
+*	dailyDataEmployee 							has_many :dailyDataEmployees
+*	dailyData 											has_many :dailyData, :through => :dailyDataEmployees
 rails g scaffold Employee firstName:string lastName:string fedexNumber:integer contractorNumber:integer hireDate:date dateOfBirth:date activeBoolean:boolean startDate:datetime endDate:datetime terminationDate:datetime
 
 &
@@ -250,7 +252,7 @@ rails g scaffold Vehicle fedexVehicleNumber:integer fedexVehicleName:string cont
 # DailyDataVehicle
 	vehicle:belongs_to
 	#### POST ####
-	dailyData 										belongs_to :dailyData
+*	dailyData 										belongs_to :dailyDatum
 rails g DailyDataVehicle vehicle:belongs_to
 
 &
@@ -269,13 +271,20 @@ rails g DailyDataVehicle vehicle:belongs_to
 	vehicle:belongs_to
 	#### POST ####
 	dailyDataExceptions
-	notes		
-	dailyDataVehicle 								has_many :dailyDataVehicles
-	vehicles 												has_many :vehicles, :through => :dailyDataVehicles 
+*	notes														has_many :notes, :as => :notable
+*	dailyDataVehicle 								has_many :dailyDataVehicles
+*	vehicles 												has_many :vehicles, :through => :dailyDataVehicles
+*	dailyDataEmployee 							has_many :dailyDataEmployees
+*	employee 												has_many :employees, :through => :dailyDataEmployees
 rails g scaffold DailyData deliveryStop:integer deliveryPackage:integer pickupStop:integer pickupPackage:integer calltag:integer didNotAttempt:integer inboundLocalService:decimal earlyPickUp:integer latePickUp:integer startTime:datetime endTime:datetime
+
+# DailyDataEmployee
+	employee:belongs_to
+	dailyDatum:belongs_to
+	#### POST ####
+	# NONE
+rails g scaffold DailyDataEmployee employee:belongs_to dailyDatum:belongs_to
 ***
-
-
 &
 # DailyDataExceptions
 

@@ -1,0 +1,25 @@
+<%= form_for(@daily_data_employee) do |f| %>
+  <% if @daily_data_employee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@daily_data_employee.errors.count, "error") %> prohibited this daily_data_employee from being saved:</h2>
+
+      <ul>
+      <% @daily_data_employee.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :employee %><br />
+    <%= f.text_field :employee %>
+  </div>
+  <div class="field">
+    <%= f.label :dailyData %><br />
+    <%= f.text_field :dailyData %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

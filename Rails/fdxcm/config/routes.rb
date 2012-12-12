@@ -1,5 +1,7 @@
 Fdxcm::Application.routes.draw do
 
+  resources :daily_data
+
   resources :daily_data_vehicles
 
   resources :vehicles

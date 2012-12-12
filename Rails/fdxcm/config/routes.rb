@@ -1,4 +1,6 @@
 Fdxcm::Application.routes.draw do
+  resources :psa_states
+
   resources :states
 
   resources :psas

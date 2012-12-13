@@ -8,15 +8,34 @@ end
 
 # Addendum
 rails g migration AddFedexContractsToAddendums
+class AddFedexContractsToAddendums < ActiveRecord::Migration
+	change_table :addendums do |t|
+		t.references :fedexContract
+	end
+end
 
 # Business
 rails g migration RemoveFedexContractsFromBusinesses
+class RemoveFedexContractsFromBusinesses < ActiveRecord::Migration
+  def change
+		remove_column :businesses, :fedexContract_id
+  end
+end
 
 # DailyDataVehicle
 rails g migration AddDailyDataToDailyDataVehicle
+class AddDailyDataToDailyDataVehicle < ActiveRecord::Migration
+  def change
+		change_table :dailyDataVehicles do |t|
+	    add_column :daily_data_vehicles, :daily_data_id, :integer
+	    add_index :daily_data_vehicles, :daily_data_id
+		end
+  end
+end
 
 # FedexContract
 rails g migration AddBusinessToFedexContract
+---
 
 # Region
 rails g migration AddPSAToRegion

@@ -34,12 +34,19 @@ class AddDailyDataToDailyDataVehicle < ActiveRecord::Migration
 end
 
 # FedexContract
-rails g migration AddBusinessToFedexContract
----
+rails g migration AddBusinessesToFedexContracts
+class AddBusinessesToFedexContracts < ActiveRecord::Migration
+  def change
+		change_table :fedex_contracts do |t|
+			t.references :businesses
+		end
+  end
+end
 
 # Region
 rails g migration AddPSAToRegion
 # has_many PSA
+---
 
 # PSA
 rails g migration AddRegionToPSA

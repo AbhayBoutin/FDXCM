@@ -6,15 +6,27 @@ PSA _X_ State
 			PSA.c1
 			PSA is related ot multiple States
 				States
+					NC | SC
 					State NC is related to psa.c1 and psa.c2
 					psa.c1 is for state NC
 					psa.c1 is for state SC
 
 			PSA.c2
-			States
-				NC
+				States
+					NC
 					State NC is related to psa.c1 and psa.c2
 					psa.c2 is for state NC
+
+		Model
+			PSA
+				has_many :psaStates
+				has_many :states, :through => :psaStates
+			State
+			  has_many:psaStates
+			  has_many:psas, :through => :psaStates
+			PSAState
+			  belongs_to :psa
+			  belongs_to :state
 
 		Schema
 			PSA
@@ -35,3 +47,24 @@ PSA _X_ State
 			  LATER
 			  add_index "psa_states", ["psa_id"], :name => "index_psa_states_on_psa_id"
 			  add_index "psa_states", ["state_id"], :name => "index_psa_states_on_state_id"
+
+	Many to One
+		Description
+			Vehicle.v1
+				Vehicle has one type of Service type > Ground
+			Vehicle.v2
+				Vehicle has one type of Service type > Ground
+			Vehicle.v3
+				Vehicle has one type of Service type > HD
+
+		Model
+			Vehicle
+				belongs_to:serviceType
+			ServiceType
+				has_many:vehicles
+
+		Schema
+			Vehicle
+				serviceType_id
+			ServiceType
+				

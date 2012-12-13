@@ -55,6 +55,7 @@ rails g scaffold Employee firstName:string lastName:string fedexNumber:integer c
 	employee:belongs_to
 	#### POST ####
 *	userRole 												has_many :userRoles
+* role 														has_many :roles, :through => userRoles
 rails g scaffold User contractorBoolean:boolean activeBoolean:boolean employee:belongs_to
 
 # Role
@@ -237,10 +238,10 @@ rails g scaffold VehicleOdometer odometerReading:integer startDate:datetime endD
 	startDate:datetime
 	endDate:datetime
 	activeBoolean:boolean
-	serviceType:references 			
+	serviceType:references 			Handled in references Migration
 	vehicleType:references 			
 	vehicleFuel:references 			
-	vehicleOdometer:references 	Handled in references Migration
+	vehicleOdometer:references 	
 	#### POST ####
 	notes 													has_many :notes, :as => :notable
 	dailyDataVehicle 								has_many :dailyDataVehicle
@@ -285,6 +286,19 @@ rails g scaffold DailyData deliveryStop:integer deliveryPackage:integer pickupSt
 	# NONE
 rails g scaffold DailyDataEmployee employee:belongs_to dailyDatum:belongs_to
 ***
+
+# Business
+	name:string
+	taxIDNumber:string
+	address:string
+	city:string
+	state:string
+	zip:string
+	country:string
+	fedexContract:has_one
+  #### POST ####
+rails g scaffold Business fedexContract:references name:string taxIDNumber:string address:string city:string state:string zip:string country:string
+
 &
 # DailyDataExceptions
 

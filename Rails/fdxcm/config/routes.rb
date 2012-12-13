@@ -1,5 +1,7 @@
 Fdxcm::Application.routes.draw do
 
+  resources :businesses
+
   resources :daily_data_employees
 
   resources :daily_data

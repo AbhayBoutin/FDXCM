@@ -1,0 +1,43 @@
+# Vehicle 
+rails g migration AddServiceTypeIndexToVehicle
+class AddServiceTypeIndexToVehicle < ActiveRecord::Migration
+  def change
+    add_index :vehicles, :serviceType_id
+  end
+end
+
+# Addendum
+rails g migration AddFedexContractsToAddendums
+
+# Business
+rails g migration RemoveFedexContractsFromBusinesses
+
+# DailyDataVehicle
+rails g migration AddDailyDataToDailyDataVehicle
+
+# FedexContract
+rails g migration AddBusinessToFedexContract
+
+# Region
+rails g migration AddPSAToRegion
+# has_many PSA
+
+# PSA
+rails g migration AddRegionToPSA
+# belongs_to Region
+
+# Terminal
+rails g migration AddRegionToTerminal
+# belongs_to Region
+
+# VehicleFuel
+rails g migration AddVehiclesToVehicleFuel
+# has_many:vehicles
+
+# VehicleOdometer
+rails g migration AddVehiclesToVehicleOdometer
+# has_many:vehicles
+
+# VehicleType
+rails g migration AddVehiclesToVehicleType
+# has_many:vehicles

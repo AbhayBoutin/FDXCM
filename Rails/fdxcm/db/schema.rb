@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121213050336) do
+ActiveRecord::Schema.define(:version => 20121213050947) do
 
   create_table "addendums", :force => true do |t|
     t.string   "fedexAddendumName"
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(:version => 20121213050336) do
   end
 
   create_table "businesses", :force => true do |t|
-    t.integer  "fedexContract_id"
     t.string   "name"
     t.string   "taxIDNumber"
     t.string   "address"
@@ -35,11 +34,9 @@ ActiveRecord::Schema.define(:version => 20121213050336) do
     t.string   "state"
     t.string   "zip"
     t.string   "country"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
-
-  add_index "businesses", ["fedexContract_id"], :name => "index_businesses_on_fedexContract_id"
 
   create_table "daily_data", :force => true do |t|
     t.integer  "deliveryStop"

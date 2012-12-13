@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121213061020) do
+ActiveRecord::Schema.define(:version => 20121213061801) do
 
   create_table "addendums", :force => true do |t|
     t.string   "fedexAddendumName"
@@ -165,6 +165,7 @@ ActiveRecord::Schema.define(:version => 20121213061020) do
     t.integer  "contractorRegionNumber"
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
+    t.integer  "psas_id"
   end
 
   create_table "roles", :force => true do |t|

@@ -82,6 +82,26 @@ class AddEmployeesToBusiness < ActiveRecord::Migration
 		end
   end
 end
+
+# Vehicles
+class AddVehiclesToBusinesses < ActiveRecord::Migration
+  def change
+		add_column :vehicles, :business_id, :integer
+  end
+end
+
+# Employee
+rails g migration ChangeEmployeesToBusinessToBusinessToEmployee
+class ChangeEmployeesToBusinessToBusinessToEmployee < ActiveRecord::Migration
+  def up
+		remove_column :businesses, :employee_id
+		add_column :employees, :business_id, :integer
+  end
+
+  def down
+  	remove_column :employees, :business_id
+  end
+end
 ---
 # Vehicle
 rails g migration AddVehiclesToBusinesses

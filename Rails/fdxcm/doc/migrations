@@ -62,7 +62,30 @@ class AddTerminalsToRegions < ActiveRecord::Migration
 		end
   end
 end
+
+# PSA
+rails g migration AddPSASToBusinesses
+class AddPsasToBusinesses < ActiveRecord::Migration
+  def change
+		change_table :psas do |t|
+			t.references :businesses
+		end
+  end
+end
+
+# Emplyoee
+rails g migration AddEmployeesToBusiness
+class AddEmployeesToBusiness < ActiveRecord::Migration
+  def change
+		change_table :businesses do |t|
+			t.references :employees
+		end
+  end
+end
 ---
+# Vehicle
+rails g migration AddVehiclesToBusinesses
+
 # VehicleFuel
 rails g migration AddVehiclesToVehicleFuel
 # has_many:vehicles

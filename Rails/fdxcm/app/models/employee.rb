@@ -7,4 +7,6 @@ class Employee < ActiveRecord::Base
 
 	has_many :dailyDataEmployees
 	has_many :dailyData, :through => :dailyDataEmployees
+
+	belongs_to :business
 end

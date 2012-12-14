@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121214115738) do
+ActiveRecord::Schema.define(:version => 20121214122442) do
 
   create_table "addendums", :force => true do |t|
     t.string   "fedexAddendumName"
@@ -34,8 +34,9 @@ ActiveRecord::Schema.define(:version => 20121214115738) do
     t.string   "state"
     t.string   "zip"
     t.string   "country"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "employees_id"
   end
 
   create_table "daily_data", :force => true do |t|
@@ -146,6 +147,7 @@ ActiveRecord::Schema.define(:version => 20121214115738) do
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
     t.integer  "regions_id"
+    t.integer  "businesses_id"
   end
 
   create_table "psazips", :force => true do |t|
@@ -260,6 +262,7 @@ ActiveRecord::Schema.define(:version => 20121214115738) do
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.integer  "service_type_id"
+    t.integer  "business_id"
   end
 
   add_index "vehicles", ["service_type_id"], :name => "index_vehicles_on_service_type_id"

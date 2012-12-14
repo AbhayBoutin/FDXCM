@@ -102,18 +102,3 @@ class ChangeEmployeesToBusinessToBusinessToEmployee < ActiveRecord::Migration
   	remove_column :employees, :business_id
   end
 end
----
-# Vehicle
-rails g migration AddVehiclesToBusinesses
-
-# VehicleFuel
-rails g migration AddVehiclesToVehicleFuel
-# has_many:vehicles
-
-# VehicleOdometer
-rails g migration AddVehiclesToVehicleOdometer
-# has_many:vehicles
-
-# VehicleType
-rails g migration AddVehiclesToVehicleType
-# has_many:vehicles

@@ -285,7 +285,6 @@ rails g scaffold DailyData deliveryStop:integer deliveryPackage:integer pickupSt
 	#### POST ####
 	# NONE
 rails g scaffold DailyDataEmployee employee:belongs_to dailyDatum:belongs_to
-***
 
 # Business
 	name:string
@@ -298,7 +297,7 @@ rails g scaffold DailyDataEmployee employee:belongs_to dailyDatum:belongs_to
 	fedexContract:has_one
   #### POST ####
 rails g scaffold Business fedexContract:references name:string taxIDNumber:string address:string city:string state:string zip:string country:string
-
+***
 &
 # DailyDataExceptions
 
@@ -394,14 +393,3 @@ rails g scaffold Business fedexContract:references name:string taxIDNumber:strin
 	#### POST ####
 	psa 														belongs_to :psa
 	thresholds 											belongs_to :thresholds
-
-
-# MIGRATIONS
-ServiceType
-	rails g migration AddServiceTypeToVehicle
-VehicleFuel
-	rails g migration AddVehicleFuelToVehicle
-VehicleType
-	rails g migration AddVehicleTypeToVehicle
-VehicleOdometer
-	rails g migration AddVehicleOdometerToVehicle

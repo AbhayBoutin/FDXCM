@@ -3,4 +3,7 @@ class State < ActiveRecord::Base
 
   has_many:psaStates
   has_many:psas, :through => :psaStates
+
+	has_many :notes, :as => :notable
+
 end

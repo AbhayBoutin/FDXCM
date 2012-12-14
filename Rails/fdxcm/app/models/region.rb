@@ -4,4 +4,6 @@ class Region < ActiveRecord::Base
   has_many :psas
   has_many :terminals
 
+	has_many :notes, :as => :notable
+
 end

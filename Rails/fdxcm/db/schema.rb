@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121214153938) do
+ActiveRecord::Schema.define(:version => 20121214184231) do
 
   create_table "addendums", :force => true do |t|
     t.string   "fedexAddendumName"
@@ -74,6 +74,13 @@ ActiveRecord::Schema.define(:version => 20121214153938) do
 
   add_index "daily_data_vehicles", ["daily_data_id"], :name => "index_daily_data_vehicles_on_daily_data_id"
   add_index "daily_data_vehicles", ["vehicle_id"], :name => "index_daily_data_vehicles_on_vehicle_id"
+
+  create_table "delivery_exceptions", :force => true do |t|
+    t.string   "exceptionType"
+    t.text     "exceptionDescription"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
 
   create_table "employee_psas", :force => true do |t|
     t.datetime "startDate"
@@ -264,6 +271,9 @@ ActiveRecord::Schema.define(:version => 20121214153938) do
     t.datetime "updated_at",         :null => false
     t.integer  "service_type_id"
     t.integer  "business_id"
+    t.integer  "serviceFuel_id"
+    t.integer  "serviceOdometer_id"
+    t.integer  "serviceType_id"
   end
 
   add_index "vehicles", ["service_type_id"], :name => "index_vehicles_on_service_type_id"

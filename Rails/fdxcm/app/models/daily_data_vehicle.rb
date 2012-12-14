@@ -3,4 +3,7 @@ class DailyDataVehicle < ActiveRecord::Base
   # attr_accessible :title, :body
 
   belongs_to :dailyDatum
+
+	has_many :notes, :as => :notable
+
 end

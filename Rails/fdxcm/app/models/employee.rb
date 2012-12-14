@@ -9,4 +9,7 @@ class Employee < ActiveRecord::Base
 	has_many :dailyData, :through => :dailyDataEmployees
 
 	belongs_to :business
+
+	has_many :employeePsas
+	has_many :psas, :through => :employeePsas
 end

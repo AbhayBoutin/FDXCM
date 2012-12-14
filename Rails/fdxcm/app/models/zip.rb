@@ -3,4 +3,7 @@ class Zip < ActiveRecord::Base
 
 	has_many:psazips
 	has_many:psas, :through => :psazips
+
+	has_many :notes, :as => :notable
+
 end

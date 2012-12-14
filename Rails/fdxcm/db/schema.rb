@@ -145,6 +145,7 @@ ActiveRecord::Schema.define(:version => 20121213061801) do
     t.datetime "endDate"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+    t.integer  "regions_id"
   end
 
   create_table "psazips", :force => true do |t|
@@ -165,7 +166,6 @@ ActiveRecord::Schema.define(:version => 20121213061801) do
     t.integer  "contractorRegionNumber"
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
-    t.integer  "psas_id"
   end
 
   create_table "roles", :force => true do |t|

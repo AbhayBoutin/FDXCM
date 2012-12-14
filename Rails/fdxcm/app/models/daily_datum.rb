@@ -8,4 +8,7 @@ class DailyDatum < ActiveRecord::Base
 
 	has_many :dailyDataEmployees
 	has_many :employees, :through => :dailyDataEmployees
+
+	has_many :dailyDataDeliveryExceptions
+	has_many :deliveryExceptions, :through => :dailyDataDeliveryExceptions
 end

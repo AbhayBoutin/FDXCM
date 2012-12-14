@@ -271,7 +271,8 @@ rails g DailyDataVehicle vehicle:belongs_to
 	endTime:datetime
 	vehicle:belongs_to
 	#### POST ####
-	dailyDataExceptions
+*	dailyDataDeliveryExceptions 		has_many :dailyDataDeliveryExceptions
+* deliveryException 							has_many :deliveryExceptions, :through => :dailyDataDeliveryExceptions
 *	notes														has_many :notes, :as => :notable
 *	dailyDataVehicle 								has_many :dailyDataVehicles
 *	vehicles 												has_many :vehicles, :through => :dailyDataVehicles
@@ -297,28 +298,36 @@ rails g scaffold DailyDataEmployee employee:belongs_to dailyDatum:belongs_to
 	fedexContract:has_one
   #### POST ####
 rails g scaffold Business fedexContract:references name:string taxIDNumber:string address:string city:string state:string zip:string country:string
-***
-&
-# DailyDataExceptions
-
-	#### POST ####
-	dailyData 											belongs_to :dailyData
-	exception 											belongs_to :exception
 
 &
-# Exception
+# DeliveryException
 	# Type of exceptions (code 03|05|07)
 	exceptionType:string
+	exceptionDescription:text
 	#### POST ####
+*	dailyDataDeliveryExceptions 						has_many :dailyDataDeliveryExceptions
+*	dailydata 															has_many :dailydata, :through => :dailyDataDeliveryExceptions
+rails g scaffold DeliveryException exceptionType:string exceptionDescription:text
+
+# DailyDataDeliveryException
+	startDate:datetime
+	endDate:datetime
+	dailyData:belongs_to
+	deliveryException:belongs_to
+	#### POST ####
+	# NONE
+rails g scaffold DailyDataDeliveryException startDate:datetime endDate:datetime dailyData:belongs_to deliveryException:belongs_to
+***
 
 &
 # EmployeeTerminal
 	startDate:datetime
 	endDate:datetime
 	activeBoolean:boolean			
+	employee:belongs_to
+	terminal:belongs_to
 	#### POST ####
-	employee
-	terminal
+rails g scaffold
 
 &
 # EmployeeManager
@@ -359,7 +368,7 @@ rails g scaffold Business fedexContract:references name:string taxIDNumber:strin
 	#### POST ####
 	employee
 	flatPayType
-	frequency
+	frequency  
 
 &
 # ProductionPay

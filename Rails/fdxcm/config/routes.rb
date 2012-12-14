@@ -1,5 +1,7 @@
 Fdxcm::Application.routes.draw do
 
+  resources :daily_data_delivery_exceptions
+
   resources :delivery_exceptions
 
   resources :businesses

@@ -52,11 +52,17 @@ class AddPsaToRegion < ActiveRecord::Migration
 		end
   end
 end
----
-# Terminal
-rails g migration AddRegionToTerminal
-# belongs_to Region
 
+# Terminal
+rails g migration AddTerminalsToRegions
+class AddTerminalsToRegions < ActiveRecord::Migration
+  def change
+		change_table :terminals do |t|
+			t.references :regions
+		end
+  end
+end
+---
 # VehicleFuel
 rails g migration AddVehiclesToVehicleFuel
 # has_many:vehicles

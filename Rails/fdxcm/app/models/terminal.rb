@@ -4,4 +4,7 @@ class Terminal < ActiveRecord::Base
 	belongs_to :regions
 
   has_many :notes, :as => :notable
+
+	has_many :employeeTerminals
+	has_many :employees, :through => :employeeTerminals
 end

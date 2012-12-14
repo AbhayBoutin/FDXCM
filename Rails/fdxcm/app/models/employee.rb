@@ -12,4 +12,7 @@ class Employee < ActiveRecord::Base
 
 	has_many :employeePsas
 	has_many :psas, :through => :employeePsas
+
+	has_many :employeeTerminals
+	has_many :terminals, :through => :employeeTerminals
 end

@@ -271,6 +271,8 @@ rails g DailyDataVehicle vehicle:belongs_to
 	endTime:datetime
 	vehicle:belongs_to
 	#### POST ####
+*	has_many :employeeTerminals
+*	has_many :terminals, :through => :employeeTerminals
 *	dailyDataDeliveryExceptions 		has_many :dailyDataDeliveryExceptions
 * deliveryException 							has_many :deliveryExceptions, :through => :dailyDataDeliveryExceptions
 *	notes														has_many :notes, :as => :notable
@@ -323,11 +325,11 @@ rails g scaffold DailyDataDeliveryException startDate:datetime endDate:datetime 
 # EmployeeTerminal
 	startDate:datetime
 	endDate:datetime
-	activeBoolean:boolean			
+	activeBoolean:boolean
 	employee:belongs_to
 	terminal:belongs_to
 	#### POST ####
-rails g scaffold
+rails g scaffold EmployeeTerminal startDate:datetime endDate:datetime activeBoolean:boolean employee:belongs_to terminal:belongs_to
 
 &
 # EmployeeManager

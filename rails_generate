@@ -49,8 +49,8 @@ rails g scaffold Notes notable_id:integer notable_type:string content:text start
 * has_many :managers, :through => :employee_manager_assignments
 * has_many :subordinate_relationships, :class_name=>"EmployeeManagerAssignment", :foreign_key=>"manager_id"
 * has_many :subordinates, :through => :subordinate_relationships, :source=>:employee
-	employeePay 										has_many :employeePays
-	pay 														has_many :pays, :through => :employeePay
+*	employeePay 										has_many :employeePays
+*	pay 														has_many :pays, :through => :employeePay
 rails g scaffold Employee firstName:string lastName:string fedexNumber:integer contractorNumber:integer hireDate:date dateOfBirth:date activeBoolean:boolean startDate:datetime endDate:datetime terminationDate:datetime
 
 &
@@ -352,8 +352,8 @@ rails g scaffold EmployeeManagerAssignment startDate:datetime endDate:datetime a
 	amount:decimal
 	datetime:datetime
 	#### POST ####
-	employeePay 										has_many :employeePays
-	employee 												has_many :employees, :through => :employeePay
+*	employeePay 										has_many :employeePays
+*	employee 												has_many :employees, :through => :employeePay
 rails g scaffold Pay amount:decimal datetime:datetime
 
 &
@@ -362,7 +362,7 @@ rails g scaffold Pay amount:decimal datetime:datetime
 	startDate:datetime
 	endDate:datetime
 	#### POST ####
-	pay 														belongs_to :pay
+*	pay 														belongs_to :pay
 rails g scaffold EmployeePay employee:belongs_to startDate:datetime endDate:datetime
 
 # FlatPayType

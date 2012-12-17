@@ -16,8 +16,11 @@ class Employee < ActiveRecord::Base
 	has_many :employeeTerminals
 	has_many :terminals, :through => :employeeTerminals
 
-  has_many :employee_manager_assignments
-  has_many :managers, :through => :employee_manager_assignments
-  has_many :subordinate_relationships, :class_name=>"EmployeeManagerAssignment", :foreign_key=>"manager_id"
-  has_many :subordinates, :through => :subordinate_relationships, :source=>:employee
+	has_many :employee_manager_assignments
+	has_many :managers, :through => :employee_manager_assignments
+	has_many :subordinate_relationships, :class_name=>"EmployeeManagerAssignment", :foreign_key=>"manager_id"
+	has_many :subordinates, :through => :subordinate_relationships, :source=>:employee
+
+	has_many :employeePays
+	has_many :pays, :through => :employeePay
 end

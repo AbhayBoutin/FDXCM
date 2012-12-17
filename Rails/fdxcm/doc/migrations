@@ -102,3 +102,6 @@ class ChangeEmployeesToBusinessToBusinessToEmployee < ActiveRecord::Migration
   	remove_column :employees, :business_id
   end
 end
+
+# EmployeePays
+rails g migration AddDetailsToEmployeePays pay:belongs_to

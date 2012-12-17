@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121217020025) do
+ActiveRecord::Schema.define(:version => 20121217020539) do
 
   create_table "addendums", :force => true do |t|
     t.string   "fedexAddendumName"
@@ -111,6 +111,7 @@ ActiveRecord::Schema.define(:version => 20121217020025) do
     t.datetime "endDate"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "pay_id"
   end
 
   add_index "employee_pays", ["employee_id"], :name => "index_employee_pays_on_employee_id"

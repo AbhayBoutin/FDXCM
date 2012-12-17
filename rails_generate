@@ -363,7 +363,7 @@ rails g scaffold Pay amount:decimal datetime:datetime
 	#### POST ####
 *	pay 														belongs_to :pay
 rails g scaffold EmployeePay employee:belongs_to startDate:datetime endDate:datetime
----
+
 &
 # PayProfile
 # salary, hourly, pto, temp, bonus. threshold
@@ -409,10 +409,11 @@ rails g scaffold FlatPay payAmount:decimal startDate:datetime endTime:datetime a
 	startDate:datetime
 	endDate:datetime
 	activeBoolean:boolean
-	payProfile:has_many
 	#### POST ####
 	employee 										has_many :employees, :through => :payProfile
-
+	payProfile 									has_many :payProfiles
+rails g scaffold ProductionPay delivery_package_pay:decimal delivery_stop_pay:decimal pickup_package_pay:decimal pickup_stop_pay:decimal hourly_pay:decimal task_pay:decimal incident_dock_pay:decimal startDate:datetime endDate:datetime activeBoolean:boolean
+---
 # EmployeeThresholds
 	minimumPackages:integer
 	maximumPackages:integer

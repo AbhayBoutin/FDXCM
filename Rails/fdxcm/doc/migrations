@@ -105,3 +105,11 @@ end
 
 # EmployeePays
 rails g migration AddDetailsToEmployeePays pay:belongs_to
+class AddDetailsToEmployeePays < ActiveRecord::Migration
+  def change
+    add_column :employee_pays, :pay_id, :integer
+  end
+end
+
+# PayProfile
+rails g migration AddDetailsToPayProfiles flatPay_id:integer productionPay_id:integer

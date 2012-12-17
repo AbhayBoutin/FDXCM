@@ -1,5 +1,7 @@
 Fdxcm::Application.routes.draw do
 
+  resources :production_pays
+
   resources :flat_pays
 
   resources :frequencies

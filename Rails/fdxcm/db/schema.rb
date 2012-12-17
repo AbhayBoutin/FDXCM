@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121217052422) do
+ActiveRecord::Schema.define(:version => 20121217052617) do
 
   create_table "addendums", :force => true do |t|
     t.string   "fedexAddendumName"
@@ -215,6 +215,21 @@ ActiveRecord::Schema.define(:version => 20121217052422) do
     t.datetime "datetime"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "production_pays", :force => true do |t|
+    t.decimal  "delivery_package_pay"
+    t.decimal  "delivery_stop_pay"
+    t.decimal  "pickup_package_pay"
+    t.decimal  "pickup_stop_pay"
+    t.decimal  "hourly_pay"
+    t.decimal  "task_pay"
+    t.decimal  "incident_dock_pay"
+    t.datetime "startDate"
+    t.datetime "endDate"
+    t.boolean  "activeBoolean"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
   end
 
   create_table "psa_states", :force => true do |t|

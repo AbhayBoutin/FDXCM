@@ -24,5 +24,9 @@ class Employee < ActiveRecord::Base
 	has_many :employeePays
 	has_many :pays, :through => :employeePay
 
+	has_many :payProfiles
+	has_many :flatPays, :through => :payProfile
+	has_many :productionPays, :through => :payProfile
+
 	has_paper_trail
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121217052617) do
+ActiveRecord::Schema.define(:version => 20121217053059) do
 
   create_table "addendums", :force => true do |t|
     t.string   "fedexAddendumName"
@@ -204,11 +204,15 @@ ActiveRecord::Schema.define(:version => 20121217052617) do
   create_table "pay_profiles", :force => true do |t|
     t.string   "profileName"
     t.integer  "employee_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.integer  "flatPay_id"
+    t.integer  "productionPay_id"
   end
 
   add_index "pay_profiles", ["employee_id"], :name => "index_pay_profiles_on_employee_id"
+  add_index "pay_profiles", ["flatPay_id"], :name => "index_pay_profiles_on_flatPay_id"
+  add_index "pay_profiles", ["productionPay_id"], :name => "index_pay_profiles_on_productionPay_id"
 
   create_table "pays", :force => true do |t|
     t.decimal  "amount"

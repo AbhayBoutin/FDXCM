@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121217051724) do
+ActiveRecord::Schema.define(:version => 20121217052422) do
 
   create_table "addendums", :force => true do |t|
     t.string   "fedexAddendumName"
@@ -170,6 +170,18 @@ ActiveRecord::Schema.define(:version => 20121217051724) do
     t.datetime "updated_at",               :null => false
     t.integer  "businesses_id"
   end
+
+  create_table "flat_pays", :force => true do |t|
+    t.decimal  "payAmount"
+    t.datetime "startDate"
+    t.datetime "endTime"
+    t.boolean  "activeBoolean"
+    t.integer  "frequency_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "flat_pays", ["frequency_id"], :name => "index_flat_pays_on_frequency_id"
 
   create_table "frequencies", :force => true do |t|
     t.string   "frequencyInterval"

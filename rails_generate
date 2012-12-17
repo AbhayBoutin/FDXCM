@@ -364,18 +364,21 @@ rails g scaffold Pay amount:decimal datetime:datetime
 *	pay 														belongs_to :pay
 rails g scaffold EmployeePay employee:belongs_to startDate:datetime endDate:datetime
 ---
-# FlatPayType
+# PayProfile
 # salary, hourly, pto, temp, bonus. threshold
-	flatPayName:string
+	profileName:string
+	employee:belongs_to
 	#### POST ####
-
-rails g scaffold FlatPayType flatPayName:string
+	flatPay 										belongs_to:flatPay
+	productionPay 							belongs_to:productionPay
+rails g scaffold PayProfile profileName:string employee:belongs_to
 
 # Frequency
 # Hourly, Weekly, Biweekly, Monthly
 	frequencyInterval:string
 	startDate:datetime
 	endDate:datetime
+
 	#### POST ####
 
 &
@@ -384,10 +387,9 @@ rails g scaffold FlatPayType flatPayName:string
 	startDate:datetime
 	endTime:datetime
 	activeBoolean:boolean
-
 	#### POST ####
 	employee
-	flatPayType
+	payProfile
 	frequency
 
 &

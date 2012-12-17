@@ -1,5 +1,7 @@
 Fdxcm::Application.routes.draw do
 
+  resources :employee_pays
+
   resources :pays
 
   resources :employee_manager_assignments

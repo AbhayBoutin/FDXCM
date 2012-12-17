@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Amount:</b>
+  <%= @pay.amount %>
+</p>
+
+<p>
+  <b>Datetime:</b>
+  <%= @pay.datetime %>
+</p>
+
+
+<%= link_to 'Edit', edit_pay_path(@pay) %> |
+<%= link_to 'Back', pays_path %>

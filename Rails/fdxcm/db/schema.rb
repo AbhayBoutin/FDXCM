@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121216220234) do
+ActiveRecord::Schema.define(:version => 20121217015853) do
 
   create_table "addendums", :force => true do |t|
     t.string   "fedexAddendumName"
@@ -105,19 +105,6 @@ ActiveRecord::Schema.define(:version => 20121216220234) do
 
   add_index "employee_manager_assignments", ["employee_id"], :name => "index_employee_manager_assignments_on_employee_id"
 
-  create_table "employee_managers", :force => true do |t|
-    t.datetime "startDate"
-    t.datetime "endDate"
-    t.boolean  "activeBoolean"
-    t.integer  "employee_id"
-    t.integer  "manager_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-  end
-
-  add_index "employee_managers", ["employee_id"], :name => "index_employee_managers_on_employee_id"
-  add_index "employee_managers", ["manager_id"], :name => "index_employee_managers_on_manager_id"
-
   create_table "employee_psas", :force => true do |t|
     t.datetime "startDate"
     t.datetime "endDate"
@@ -173,17 +160,6 @@ ActiveRecord::Schema.define(:version => 20121216220234) do
     t.integer  "businesses_id"
   end
 
-  create_table "managers", :force => true do |t|
-    t.datetime "startDate"
-    t.datetime "endDate"
-    t.boolean  "activeBoolean"
-    t.integer  "employee_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-  end
-
-  add_index "managers", ["employee_id"], :name => "index_managers_on_employee_id"
-
   create_table "notes", :force => true do |t|
     t.integer  "notable_id"
     t.string   "notable_type"
@@ -192,6 +168,13 @@ ActiveRecord::Schema.define(:version => 20121216220234) do
     t.datetime "endDate"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "pays", :force => true do |t|
+    t.decimal  "amount"
+    t.datetime "datetime"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "psa_states", :force => true do |t|
@@ -331,9 +314,6 @@ ActiveRecord::Schema.define(:version => 20121216220234) do
     t.datetime "updated_at",         :null => false
     t.integer  "service_type_id"
     t.integer  "business_id"
-    t.integer  "serviceFuel_id"
-    t.integer  "serviceOdometer_id"
-    t.integer  "serviceType_id"
   end
 
   add_index "vehicles", ["service_type_id"], :name => "index_vehicles_on_service_type_id"

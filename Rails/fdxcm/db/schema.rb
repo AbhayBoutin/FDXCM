@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121217020539) do
+ActiveRecord::Schema.define(:version => 20121217045456) do
 
   create_table "addendums", :force => true do |t|
     t.string   "fedexAddendumName"
@@ -331,6 +331,17 @@ ActiveRecord::Schema.define(:version => 20121217020539) do
   add_index "vehicles", ["vehicleFuel_id"], :name => "index_vehicles_on_vehicleFuel_id"
   add_index "vehicles", ["vehicleOdometer_id"], :name => "index_vehicles_on_vehicleOdometer_id"
   add_index "vehicles", ["vehicleType_id"], :name => "index_vehicles_on_vehicleType_id"
+
+  create_table "versions", :force => true do |t|
+    t.string   "item_type",  :null => false
+    t.integer  "item_id",    :null => false
+    t.string   "event",      :null => false
+    t.string   "whodunnit"
+    t.text     "object"
+    t.datetime "created_at"
+  end
+
+  add_index "versions", ["item_type", "item_id"], :name => "index_versions_on_item_type_and_item_id"
 
   create_table "zips", :force => true do |t|
     t.string   "zip"

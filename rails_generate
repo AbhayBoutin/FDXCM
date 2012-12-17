@@ -345,7 +345,6 @@ rails g scaffold EmployeeTerminal startDate:datetime endDate:datetime activeBool
 	#### POST ####
 *	manager:belongs_to, :class_name=>"Employee"
 rails g scaffold EmployeeManagerAssignment startDate:datetime endDate:datetime activeBoolean:boolean employee:belongs_to
-***
 
 &
 # Pay
@@ -364,11 +363,13 @@ rails g scaffold Pay amount:decimal datetime:datetime
 	#### POST ####
 *	pay 														belongs_to :pay
 rails g scaffold EmployeePay employee:belongs_to startDate:datetime endDate:datetime
-
+---
 # FlatPayType
-# salary, hourly, pto, temp, bonus
+# salary, hourly, pto, temp, bonus. threshold
 	flatPayName:string
 	#### POST ####
+
+rails g scaffold FlatPayType flatPayName:string
 
 # Frequency
 # Hourly, Weekly, Biweekly, Monthly
@@ -383,28 +384,29 @@ rails g scaffold EmployeePay employee:belongs_to startDate:datetime endDate:date
 	startDate:datetime
 	endTime:datetime
 	activeBoolean:boolean
+
 	#### POST ####
 	employee
 	flatPayType
-	frequency  
+	frequency
 
 &
 # ProductionPay
 	# $1.25 per stop, $0.15 per package
-	delivery_package:decimal
-	delivery_stop:decimal
-	pickup_package:decimal
-	pickup_stop:decimal
-	hours:integer
-	tasks:integer
+	delivery_package_pay:decimal
+	delivery_stop_pay:decimal
+	pickup_package_pay:decimal
+	pickup_stop_pay:decimal
+	hourly_pay:decimal
+	task_pay:decimal
+	incident_dock_pay:decimal
 	startDate:datetime
 	endDate:datetime
 	activeBoolean:boolean
 	#### POST ####
 	employee
-	frequency
 
-# Thresholds
+# EmployeeThresholds
 	minimumPackages:integer
 	maximumPackages:integer
 	minimumStops:integer
@@ -415,7 +417,9 @@ rails g scaffold EmployeePay employee:belongs_to startDate:datetime endDate:date
 	#### POST ####
 	employee 
 
-# PSAThresholds
+# NormalPSAThresholds
+
+# PeakPSAThresholds
 
 	#### POST ####
 	psa 														belongs_to :psa

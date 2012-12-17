@@ -23,4 +23,6 @@ class Employee < ActiveRecord::Base
 
 	has_many :employeePays
 	has_many :pays, :through => :employeePay
+
+	has_paper_trail
 end

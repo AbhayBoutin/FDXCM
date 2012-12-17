@@ -1,5 +1,7 @@
 Fdxcm::Application.routes.draw do
 
+  resources :employee_manager_assignments
+
   resources :employee_terminals
 
   resources :daily_data_delivery_exceptions

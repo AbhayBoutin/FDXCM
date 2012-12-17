@@ -41,11 +41,14 @@ rails g scaffold Notes notable_id:integer notable_type:string content:text start
 	terminationDate:datetime
 	#### POST ####
 *	notes 													has_many :notes, :as => :notable
-	employeePSA
-	employeeVehicle
+*	employeePSA
 *	user 														has_one :user
 *	dailyDataEmployee 							has_many :dailyDataEmployees
 *	dailyData 											has_many :dailyData, :through => :dailyDataEmployees
+* has_many :employee_manager_assignments
+* has_many :managers, :through => :employee_manager_assignments
+* has_many :subordinate_relationships, :class_name=>"EmployeeManagerAssignment", :foreign_key=>"manager_id"
+* has_many :subordinates, :through => :subordinate_relationships, :source=>:employee
 rails g scaffold Employee firstName:string lastName:string fedexNumber:integer contractorNumber:integer hireDate:date dateOfBirth:date activeBoolean:boolean startDate:datetime endDate:datetime terminationDate:datetime
 
 &
@@ -319,7 +322,6 @@ rails g scaffold DeliveryException exceptionType:string exceptionDescription:tex
 	#### POST ####
 	# NONE
 rails g scaffold DailyDataDeliveryException startDate:datetime endDate:datetime dailyData:belongs_to deliveryException:belongs_to
-***
 
 &
 # EmployeeTerminal
@@ -332,22 +334,38 @@ rails g scaffold DailyDataDeliveryException startDate:datetime endDate:datetime 
 rails g scaffold EmployeeTerminal startDate:datetime endDate:datetime activeBoolean:boolean employee:belongs_to terminal:belongs_to
 
 &
-# EmployeeManager
+# EmployeeManagerAssignment
 	startDate:datetime
 	endDate:datetime
 	activeBoolean:boolean
+	employee:belongs_to
 	#### POST ####
-	employee
-	manager
+	manager:belongs_to, :class_name=>"Employee"
+rails g scaffold EmployeeManagerAssignment startDate:datetime endDate:datetime activeBoolean:boolean employee:belongs_to
+
+class Employee < ActiveRecord::Base
+  has_many :employee_manager_assignments
+  has_many :managers, :through => :employee_manager_assignments
+  has_many :subemp_relationships, :class_name=>"EmployeeManagerAssignment", :foreign_key=>"manager_id"
+  has_many :subemps, :through => :subemp_relationships, :source=>:employee
+end
+
+class Manager < ActiveRecord::Base
+  belongs_to :employee
+  belongs_to :manager, :class_name=>"Employee"
+end
+***
 
 &
-# EmployeeVehicle
-	startDate:datetime
-	endDate:datetime
-	activeBoolean:boolean
+# Pay
+	amount:decimal
+	datetime:datetime
 	#### POST ####
-	employee
-	vehicle
+rails g scaffold Pay amount:decimal datetime:datetime
+
+&
+# EmployeePay
+	
 
 # FlatPayType
 # salary, hourly, pto, temp, bonus

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121214184600) do
+ActiveRecord::Schema.define(:version => 20121216220234) do
 
   create_table "addendums", :force => true do |t|
     t.string   "fedexAddendumName"
@@ -94,6 +94,30 @@ ActiveRecord::Schema.define(:version => 20121214184600) do
     t.datetime "updated_at",           :null => false
   end
 
+  create_table "employee_manager_assignments", :force => true do |t|
+    t.datetime "startDate"
+    t.datetime "endDate"
+    t.boolean  "activeBoolean"
+    t.integer  "employee_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "employee_manager_assignments", ["employee_id"], :name => "index_employee_manager_assignments_on_employee_id"
+
+  create_table "employee_managers", :force => true do |t|
+    t.datetime "startDate"
+    t.datetime "endDate"
+    t.boolean  "activeBoolean"
+    t.integer  "employee_id"
+    t.integer  "manager_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "employee_managers", ["employee_id"], :name => "index_employee_managers_on_employee_id"
+  add_index "employee_managers", ["manager_id"], :name => "index_employee_managers_on_manager_id"
+
   create_table "employee_psas", :force => true do |t|
     t.datetime "startDate"
     t.datetime "endDate"
@@ -106,6 +130,19 @@ ActiveRecord::Schema.define(:version => 20121214184600) do
 
   add_index "employee_psas", ["employee_id"], :name => "index_employee_psas_on_employee_id"
   add_index "employee_psas", ["psa_id"], :name => "index_employee_psas_on_psa_id"
+
+  create_table "employee_terminals", :force => true do |t|
+    t.datetime "startDate"
+    t.datetime "endDate"
+    t.boolean  "activeBoolean"
+    t.integer  "employee_id"
+    t.integer  "terminal_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "employee_terminals", ["employee_id"], :name => "index_employee_terminals_on_employee_id"
+  add_index "employee_terminals", ["terminal_id"], :name => "index_employee_terminals_on_terminal_id"
 
   create_table "employees", :force => true do |t|
     t.string   "firstName"
@@ -135,6 +172,17 @@ ActiveRecord::Schema.define(:version => 20121214184600) do
     t.datetime "updated_at",               :null => false
     t.integer  "businesses_id"
   end
+
+  create_table "managers", :force => true do |t|
+    t.datetime "startDate"
+    t.datetime "endDate"
+    t.boolean  "activeBoolean"
+    t.integer  "employee_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "managers", ["employee_id"], :name => "index_managers_on_employee_id"
 
   create_table "notes", :force => true do |t|
     t.integer  "notable_id"

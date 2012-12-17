@@ -5,6 +5,7 @@ class Psa < ActiveRecord::Base
 
 	belongs_to :regions
 	belongs_to :businesses
+	belongs_to :serviceType
 
 	has_many :psazips
 	has_many :zips, :through => :psazips

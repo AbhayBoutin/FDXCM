@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121217053059) do
+ActiveRecord::Schema.define(:version => 20121218213343) do
 
   create_table "addendums", :force => true do |t|
     t.string   "fedexAddendumName"
@@ -34,9 +34,8 @@ ActiveRecord::Schema.define(:version => 20121217053059) do
     t.string   "state"
     t.string   "zip"
     t.string   "country"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-    t.integer  "employees_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "daily_data", :force => true do |t|
@@ -169,6 +168,18 @@ ActiveRecord::Schema.define(:version => 20121217053059) do
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
     t.integer  "businesses_id"
+    t.decimal  "deliveryStopPay"
+    t.decimal  "deliveryPackagePay"
+    t.decimal  "pickupStopPay"
+    t.decimal  "pickupPackagePay"
+    t.decimal  "coreZoneSupplementalPay"
+    t.decimal  "vehicleAvailabilityPay"
+    t.decimal  "fuelSupplementPay"
+    t.decimal  "toolRentalCost"
+    t.decimal  "internationalPackagePay"
+    t.decimal  "hazardousPackagePay"
+    t.decimal  "vacationProgramCost"
+    t.decimal  "uniformCost"
   end
 
   create_table "flat_pays", :force => true do |t|
@@ -326,11 +337,23 @@ ActiveRecord::Schema.define(:version => 20121217053059) do
     t.boolean  "contractorBoolean"
     t.boolean  "activeBoolean"
     t.integer  "employee_id"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
   end
 
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["employee_id"], :name => "index_users_on_employee_id"
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
   create_table "vehicle_fuels", :force => true do |t|
     t.string   "fuelType"

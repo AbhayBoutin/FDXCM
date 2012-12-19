@@ -1,9 +1,9 @@
 class RemoveEmployeesFromBusinesses < ActiveRecord::Migration
   def up
-    remove_column :businesses, :employees_id
+    remove_column :businesses, :employees
   end
 
   def down
-    add_column :businesses, :employees_id, :integer
+    add_column :businesses, :employees, :integer
   end
 end

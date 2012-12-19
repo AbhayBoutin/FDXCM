@@ -34,8 +34,9 @@ ActiveRecord::Schema.define(:version => 20121218213343) do
     t.string   "state"
     t.string   "zip"
     t.string   "country"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "employees_id"
   end
 
   create_table "daily_data", :force => true do |t|

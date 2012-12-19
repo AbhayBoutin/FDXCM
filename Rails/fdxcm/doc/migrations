@@ -1,4 +1,4 @@
-# Vehicle 
+\# Vehicle 
 rails g migration AddServiceTypeIndexToVehicle
 class AddServiceTypeIndexToVehicle < ActiveRecord::Migration
   def change
@@ -113,4 +113,7 @@ end
 
 # PayProfile
 rails g migration AddDetailsToPayProfiles flatPay_id:integer productionPay_id:integer
+
+# FedexContract
+rails g migration AddDetailsToFedexContracts deliveryStopPay:decimal deliveryPackagePay:decimal pickupStopPay:decimal pickupPackagePay:decimal coreZoneSupplementalPay:decimal vehicleAvailabilityPay:decimal fuelSupplementPay:decimal toolRentalCost:decimal internationalPackagePay:decimal hazardousPackagePay:decimal vacationProgramCost:decimal uniformCost:decimal
 

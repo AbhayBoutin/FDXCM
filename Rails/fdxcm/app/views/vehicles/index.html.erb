@@ -3,15 +3,15 @@
 <table>
   <tr>
     <th>Fedexvehiclenumber</th>
-    <th>Fedexvehiclename</th>
+    <!-- <th>Fedexvehiclename</th> -->
     <th>Contractornumber</th>
     <th>Contractorname</th>
-    <th>Vin</th>
-    <th>Startdate</th>
-    <th>Enddate</th>
+    <!-- <th>Vin</th> -->
+    <!-- <th>Startdate</th> -->
+    <!-- <th>Enddate</th> -->
     <th>Activeboolean</th>
     <th>Vehicletype</th>
-    <th>Vehiclefuel</th>
+    <!-- <th>Vehiclefuel</th> -->
     <th>Vehicleodometer</th>
     <th></th>
     <th></th>
@@ -21,16 +21,16 @@
 <% @vehicles.each do |vehicle| %>
   <tr>
     <td><%= vehicle.fedexVehicleNumber %></td>
-    <td><%= vehicle.fedexVehicleName %></td>
+    <!-- <td><%= vehicle.fedexVehicleName %></td> -->
     <td><%= vehicle.contractorNumber %></td>
     <td><%= vehicle.contractorName %></td>
-    <td><%= vehicle.vin %></td>
-    <td><%= vehicle.startDate %></td>
-    <td><%= vehicle.endDate %></td>
+    <!-- <td><%= vehicle.vin %></td> -->
+    <!-- <td><%= vehicle.startDate %></td> -->
+    <!-- <td><%= vehicle.endDate %></td> -->
     <td><%= vehicle.activeBoolean %></td>
-    <td><%= vehicle.vehicleType %></td>
-    <td><%= vehicle.vehicleFuel %></td>
-    <td><%= vehicle.vehicleOdometer %></td>
+    <td><%= vehicle.vehicleType.vehicleSize %></td>
+    <!-- <td><%= vehicle.vehicleFuel %></td> -->
+    <td><%= vehicle.vehicleOdometer.odometerReading %></td>
     <td><%= link_to 'Show', vehicle %></td>
     <td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>
     <td><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' } %></td>

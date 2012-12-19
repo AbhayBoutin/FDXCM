@@ -96,6 +96,7 @@ GEM
     paper_trail (2.6.4)
       activerecord (~> 3.0)
       railties (~> 3.0)
+    pg (0.14.1)
     polyglot (0.3.3)
     quiet_assets (1.0.1)
       railties (~> 3.1)
@@ -176,6 +177,7 @@ DEPENDENCIES
   jquery-rails
   launchy (>= 2.1.2)
   paper_trail
+  pg
   quiet_assets (>= 1.0.1)
   railroady
   rails (= 3.2.8)

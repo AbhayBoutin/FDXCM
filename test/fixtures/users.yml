@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  contractorBoolean: false
+  activeBoolean: false
+  employee: 
+
+two:
+  contractorBoolean: false
+  activeBoolean: false
+  employee: 

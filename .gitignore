@@ -16,3 +16,6 @@ pickle-email-*.html
 
 #Once at a stable release, uncomment this
 #/db/*.sqlite3
+
+# Business Files
+/doc/hidden/*

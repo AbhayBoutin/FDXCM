@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Delivery package pay:</b>
+  <%= @production_pay.delivery_package_pay %>
+</p>
+
+<p>
+  <b>Delivery stop pay:</b>
+  <%= @production_pay.delivery_stop_pay %>
+</p>
+
+<p>
+  <b>Pickup package pay:</b>
+  <%= @production_pay.pickup_package_pay %>
+</p>
+
+<p>
+  <b>Pickup stop pay:</b>
+  <%= @production_pay.pickup_stop_pay %>
+</p>
+
+<p>
+  <b>Hourly pay:</b>
+  <%= @production_pay.hourly_pay %>
+</p>
+
+<p>
+  <b>Task pay:</b>
+  <%= @production_pay.task_pay %>
+</p>
+
+<p>
+  <b>Incident dock pay:</b>
+  <%= @production_pay.incident_dock_pay %>
+</p>
+
+<p>
+  <b>Startdate:</b>
+  <%= @production_pay.startDate %>
+</p>
+
+<p>
+  <b>Enddate:</b>
+  <%= @production_pay.endDate %>
+</p>
+
+<p>
+  <b>Activeboolean:</b>
+  <%= @production_pay.activeBoolean %>
+</p>
+
+
+<%= link_to 'Edit', edit_production_pay_path(@production_pay) %> |
+<%= link_to 'Back', production_pays_path %>

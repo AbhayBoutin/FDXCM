@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Deliverystop:</b>
+  <%= @daily_datum.deliveryStop %>
+</p>
+
+<p>
+  <b>Deliverypackage:</b>
+  <%= @daily_datum.deliveryPackage %>
+</p>
+
+<p>
+  <b>Pickupstop:</b>
+  <%= @daily_datum.pickupStop %>
+</p>
+
+<p>
+  <b>Pickuppackage:</b>
+  <%= @daily_datum.pickupPackage %>
+</p>
+
+<p>
+  <b>Calltag:</b>
+  <%= @daily_datum.calltag %>
+</p>
+
+<p>
+  <b>Didnotattempt:</b>
+  <%= @daily_datum.didNotAttempt %>
+</p>
+
+<p>
+  <b>Inboundlocalservice:</b>
+  <%= @daily_datum.inboundLocalService %>
+</p>
+
+<p>
+  <b>Earlypickup:</b>
+  <%= @daily_datum.earlyPickUp %>
+</p>
+
+<p>
+  <b>Latepickup:</b>
+  <%= @daily_datum.latePickUp %>
+</p>
+
+<p>
+  <b>Starttime:</b>
+  <%= @daily_datum.startTime %>
+</p>
+
+<p>
+  <b>Endtime:</b>
+  <%= @daily_datum.endTime %>
+</p>
+
+
+<%= link_to 'Edit', edit_daily_datum_path(@daily_datum) %> |
+<%= link_to 'Back', daily_data_path %>

@@ -1,0 +1,25 @@
+<%= form_for(@psa_state) do |f| %>
+  <% if @psa_state.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@psa_state.errors.count, "error") %> prohibited this psa_state from being saved:</h2>
+
+      <ul>
+      <% @psa_state.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :psa %><br />
+    <%= f.text_field :psa %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,2 +1,0 @@
-module DailyDataDeliveryExceptionsHelper
-end

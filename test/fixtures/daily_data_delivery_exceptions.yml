@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  startDate: 2012-12-14 13:46:00
+  endDate: 2012-12-14 13:46:00
+  dailyData: 
+  deliveryException: 
+
+two:
+  startDate: 2012-12-14 13:46:00
+  endDate: 2012-12-14 13:46:00
+  dailyData: 
+  deliveryException: 

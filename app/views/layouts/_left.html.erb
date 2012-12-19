@@ -1,0 +1,22 @@
+<% flash.each do |name, msg| %>
+  <% if msg.is_a?(String) %>
+    <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+      <a class="close" data-dismiss="alert">&#215;</a>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    </div>
+  <% end %>
+<% end %>
+
+<ul class="nav nav-list">
+  <li class="active"><a href="#">Home</a></li>
+  <li class="nav-header">Business</li>
+  <li><%= link_to 'FedEx Contracts', fedex_contracts_path %></li>
+  <li><%= link_to 'Employees', employees_path %></li>
+  <li><%= link_to 'Vehicles', vehicles_path %></li>
+  <li><%= link_to 'PSAs', psas_path %></li>
+  <li class="nav-header">Employees</li>
+  <li><a href="/employees">Library</a></li>
+  <li><a href="#">Library</a></li>
+  <li class="nav-header">H3</li>
+  <li><a href="#">Library</a></li>
+</ul>

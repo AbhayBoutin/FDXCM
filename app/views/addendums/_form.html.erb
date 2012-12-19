@@ -1,0 +1,45 @@
+<%= form_for(@addendum) do |f| %>
+  <% if @addendum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@addendum.errors.count, "error") %> prohibited this addendum from being saved:</h2>
+
+      <ul>
+      <% @addendum.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fedexAddendumName %><br />
+    <%= f.text_field :fedexAddendumName %>
+  </div>
+  <div class="field">
+    <%= f.label :fedexAddendumNumber %><br />
+    <%= f.number_field :fedexAddendumNumber %>
+  </div>
+  <div class="field">
+    <%= f.label :fedexContractorAddendumName %><br />
+    <%= f.text_field :fedexContractorAddendumName %>
+  </div>
+  <div class="field">
+    <%= f.label :fedexContractorAddendumNumber %><br />
+    <%= f.number_field :fedexContractorAddendumNumber %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label :startDate %><br />
+    <%= f.datetime_select :startDate %>
+  </div>
+  <div class="field">
+    <%= f.label :endDate %><br />
+    <%= f.datetime_select :endDate %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

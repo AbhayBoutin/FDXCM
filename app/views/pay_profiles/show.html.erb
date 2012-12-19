@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Profilename:</b>
+  <%= @pay_profile.profileName %>
+</p>
+
+<p>
+  <b>Employee:</b>
+  <%= @pay_profile.employee %>
+</p>
+
+
+<%= link_to 'Edit', edit_pay_profile_path(@pay_profile) %> |
+<%= link_to 'Back', pay_profiles_path %>

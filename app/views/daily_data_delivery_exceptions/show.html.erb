@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Startdate:</b>
+  <%= @daily_data_delivery_exception.startDate %>
+</p>
+
+<p>
+  <b>Enddate:</b>
+  <%= @daily_data_delivery_exception.endDate %>
+</p>
+
+<p>
+  <b>Dailydata:</b>
+  <%= @daily_data_delivery_exception.dailyData %>
+</p>
+
+<p>
+  <b>Deliveryexception:</b>
+  <%= @daily_data_delivery_exception.deliveryException %>
+</p>
+
+
+<%= link_to 'Edit', edit_daily_data_delivery_exception_path(@daily_data_delivery_exception) %> |
+<%= link_to 'Back', daily_data_delivery_exceptions_path %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  employee: 
+  startDate: 2012-12-16 21:00:26
+  endDate: 2012-12-16 21:00:26
+
+two:
+  employee: 
+  startDate: 2012-12-16 21:00:26
+  endDate: 2012-12-16 21:00:26

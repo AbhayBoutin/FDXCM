@@ -1,0 +1,2 @@
+module PayProfilesHelper
+end

@@ -1,0 +1,29 @@
+<h1>Listing daily_data_delivery_exceptions</h1>
+
+<table>
+  <tr>
+    <th>Startdate</th>
+    <th>Enddate</th>
+    <th>Dailydata</th>
+    <th>Deliveryexception</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @daily_data_delivery_exceptions.each do |daily_data_delivery_exception| %>
+  <tr>
+    <td><%= daily_data_delivery_exception.startDate %></td>
+    <td><%= daily_data_delivery_exception.endDate %></td>
+    <td><%= daily_data_delivery_exception.dailyData %></td>
+    <td><%= daily_data_delivery_exception.deliveryException %></td>
+    <td><%= link_to 'Show', daily_data_delivery_exception %></td>
+    <td><%= link_to 'Edit', edit_daily_data_delivery_exception_path(daily_data_delivery_exception) %></td>
+    <td><%= link_to 'Destroy', daily_data_delivery_exception, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Daily data delivery exception', new_daily_data_delivery_exception_path %>

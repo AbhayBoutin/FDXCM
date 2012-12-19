@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Payamount:</b>
+  <%= @flat_pay.payAmount %>
+</p>
+
+<p>
+  <b>Startdate:</b>
+  <%= @flat_pay.startDate %>
+</p>
+
+<p>
+  <b>Endtime:</b>
+  <%= @flat_pay.endTime %>
+</p>
+
+<p>
+  <b>Activeboolean:</b>
+  <%= @flat_pay.activeBoolean %>
+</p>
+
+<p>
+  <b>Frequency:</b>
+  <%= @flat_pay.frequency %>
+</p>
+
+
+<%= link_to 'Edit', edit_flat_pay_path(@flat_pay) %> |
+<%= link_to 'Back', flat_pays_path %>

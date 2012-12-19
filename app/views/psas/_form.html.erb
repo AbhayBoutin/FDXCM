@@ -1,0 +1,45 @@
+<%= form_for(@psa) do |f| %>
+  <% if @psa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@psa.errors.count, "error") %> prohibited this psa from being saved:</h2>
+
+      <ul>
+      <% @psa.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fedexPSAName %><br />
+    <%= f.text_field :fedexPSAName %>
+  </div>
+  <div class="field">
+    <%= f.label :fedexPSANumber %><br />
+    <%= f.number_field :fedexPSANumber %>
+  </div>
+  <div class="field">
+    <%= f.label :contractorPSAName %><br />
+    <%= f.text_field :contractorPSAName %>
+  </div>
+  <div class="field">
+    <%= f.label :contractorPSANumber %><br />
+    <%= f.number_field :contractorPSANumber %>
+  </div>
+  <div class="field">
+    <%= f.label :activeBoolean %><br />
+    <%= f.check_box :activeBoolean %>
+  </div>
+  <div class="field">
+    <%= f.label :startDate %><br />
+    <%= f.datetime_select :startDate %>
+  </div>
+  <div class="field">
+    <%= f.label :endDate %><br />
+    <%= f.datetime_select :endDate %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

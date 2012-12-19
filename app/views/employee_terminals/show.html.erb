@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Startdate:</b>
+  <%= @employee_terminal.startDate %>
+</p>
+
+<p>
+  <b>Enddate:</b>
+  <%= @employee_terminal.endDate %>
+</p>
+
+<p>
+  <b>Activeboolean:</b>
+  <%= @employee_terminal.activeBoolean %>
+</p>
+
+<p>
+  <b>Employee:</b>
+  <%= @employee_terminal.employee %>
+</p>
+
+<p>
+  <b>Terminal:</b>
+  <%= @employee_terminal.terminal %>
+</p>
+
+
+<%= link_to 'Edit', edit_employee_terminal_path(@employee_terminal) %> |
+<%= link_to 'Back', employee_terminals_path %>

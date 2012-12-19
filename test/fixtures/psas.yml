@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  fedexPSAName: MyString
+  fedexPSANumber: 1
+  contractorPSAName: MyString
+  contractorPSANumber: 1
+  activeBoolean: false
+  startDate: 2012-12-09 16:49:40
+  endDate: 2012-12-09 16:49:40
+
+two:
+  fedexPSAName: MyString
+  fedexPSANumber: 1
+  contractorPSAName: MyString
+  contractorPSANumber: 1
+  activeBoolean: false
+  startDate: 2012-12-09 16:49:40
+  endDate: 2012-12-09 16:49:40

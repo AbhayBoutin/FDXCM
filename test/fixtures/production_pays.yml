@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  delivery_package_pay: 9.99
+  delivery_stop_pay: 9.99
+  pickup_package_pay: 9.99
+  pickup_stop_pay: 9.99
+  hourly_pay: 9.99
+  task_pay: 9.99
+  incident_dock_pay: 9.99
+  startDate: 2012-12-17 00:26:17
+  endDate: 2012-12-17 00:26:17
+  activeBoolean: false
+
+two:
+  delivery_package_pay: 9.99
+  delivery_stop_pay: 9.99
+  pickup_package_pay: 9.99
+  pickup_stop_pay: 9.99
+  hourly_pay: 9.99
+  task_pay: 9.99
+  incident_dock_pay: 9.99
+  startDate: 2012-12-17 00:26:17
+  endDate: 2012-12-17 00:26:17
+  activeBoolean: false

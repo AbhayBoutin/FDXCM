@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  frequencyInterval: MyString
+  startDate: 2012-12-17 00:17:24
+  endDate: 2012-12-17 00:17:24
+
+two:
+  frequencyInterval: MyString
+  startDate: 2012-12-17 00:17:24
+  endDate: 2012-12-17 00:17:24

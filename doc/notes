@@ -1,0 +1,84 @@
+Schema|DB Relationships by example
+
+PSA _X_ State
+	Many to Many | Many PSAs to Many States
+		Description
+			Many PSAs to Many States
+				PSA.c1
+				PSA is related ot multiple States
+					States
+						NC | SC
+						State NC is related to psa.c1 and psa.c2
+						psa.c1 is for state NC
+						psa.c1 is for state SC
+
+				PSA.c2
+					States
+						NC
+						State NC is related to psa.c1 and psa.c2
+						psa.c2 is for state NC
+		Model
+			PSA
+				has_many :psaStates
+				has_many :states, :through => :psaStates
+			State
+				has_many:psaStates
+				has_many:psas, :through => :psaStates
+			PSAState
+				belongs_to :psa
+				belongs_to :state
+		Schema
+			PSA
+				create_table "psas", :force => true do |t|
+					PSA COLUMN DATA
+				end
+			State
+				create_table "states", :force => true do |t|
+					STATE COLUMN DATA
+				end
+			PSAState
+				create_table "psa_states", :force => true do |t|
+					PSA REFERENCE DATA
+					STATE REFERENCE DATA
+				end
+
+				LATER
+				add_index "psa_states", ["psa_id"], :name => "index_psa_states_on_psa_id"
+				add_index "psa_states", ["state_id"], :name => "index_psa_states_on_state_id"
+
+	Many to One | Many Vehicles to One Service Type
+		Description
+			Many vehicles to One Service Type
+				Vehicle.v1
+					Vehicle has one type of Service type > Ground
+				Vehicle.v2
+					Vehicle has one type of Service type > Ground
+				Vehicle.v3
+					Vehicle has one type of Service type > HD
+		Model
+			Vehicle
+				belongs_to:serviceType
+			ServiceType
+				has_many:vehicles
+		Schema
+			Vehicle
+				serviceType_id
+			ServiceType
+
+	One to Many | One Region To Many PSAs
+		Description
+			One Region To Many PSAs
+				PSA.1 belongs to Region.1
+				PSA.2 belongs to Region.1
+				PSA.3 belongs to Region.1
+				PSA.4 belongs to Region.2
+				PSA.5 belongs to Region.2
+		Model
+			PSA
+				belongs_to :regions
+			Region
+				has_many :psas
+		Schema
+			PSA
+				regions_id
+			Region

@@ -19,7 +19,14 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: postgresql
+  database: fdxcm
+  username: railsadmin
+  password: 91g~?+TlAj/$5[ki5N3Z86413nkefRMIT
+  host: localhost
+
+# production:
+#   adapter: sqlite3
+#   database: db/production.sqlite3
+#   pool: 5
+#   timeout: 5000

@@ -55,7 +55,8 @@ gem "binding_of_caller", ">= 0.6.8", :group => :development
 
 group :development, :test do
     gem 'railroady'
-		gem 'sqlite3'
+		# gem 'sqlite3'
+		gem 'pg'
 end
 
 group :production do

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121218213343) do
+ActiveRecord::Schema.define(:version => 20121221083854) do
 
   create_table "addendums", :force => true do |t|
     t.string   "fedexAddendumName"
@@ -68,12 +68,12 @@ ActiveRecord::Schema.define(:version => 20121218213343) do
 
   create_table "daily_data_employees", :force => true do |t|
     t.integer  "employee_id"
-    t.integer  "dailyData_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.integer  "dailyDatum_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
-  add_index "daily_data_employees", ["dailyData_id"], :name => "index_daily_data_employees_on_dailyData_id"
+  add_index "daily_data_employees", ["dailyDatum_id"], :name => "index_daily_data_employees_on_dailyData_id"
   add_index "daily_data_employees", ["employee_id"], :name => "index_daily_data_employees_on_employee_id"
 
   create_table "daily_data_vehicles", :force => true do |t|

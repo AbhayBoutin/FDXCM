@@ -368,6 +368,11 @@
 	},
 	"file_history":
 	[
+		"/Users/special/dev/FDXCM/config/database.yml",
+		"/Users/special/dev/FDXCM/Gemfile",
+		"/Users/special/dev/FDXCM/db/migrate/20121214153938_change_employees_to_business_to_business_to_employee.rb",
+		"/Users/special/dev/FDXCM/db/schema.rb",
+		"/Users/special/dev/FDXCM/db/migrate/20121218020702_remove_employees_from_businesses.rb",
 		"/Users/special/dev/FDXCM/Rails/fdxcm/.gitignore",
 		"/Users/special/dev/FDXCM/Rails/fdxcm/config/application.rb",
 		"/Users/special/dev/FDXCM/Rails/fdxcm/config/routes.rb",
@@ -490,12 +495,7 @@
 		"/Users/special/dev/MessageBooth/css/main.css",
 		"/etc/apache2/httpd.conf",
 		"/private/etc/apache2/users/special.conf",
-		"/Users/special/dev/MessageBooth/js/jpegcam/htdocs/webcam.js",
-		"/Users/special/dev/MessageBooth/js/vendor/jpegcam/htdocs/test.html",
-		"/Users/special/dev/DASH/morgan-company/webcontent/css/morgan-company.css",
-		"/Users/special/dev/DASH/morgan-company/webcontent/hoverbuttons.cfm",
-		"/Users/special/dev/DASH/morgan-company/webcontent/template4.html",
-		"/Users/special/dev/DASH/morgan-company/webcontent/header.cfm"
+		"/Users/special/dev/MessageBooth/js/jpegcam/htdocs/webcam.js"
 	],
 	"find":
 	{
@@ -514,6 +514,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"post",
 			"vehicle",
 			"App_Name",
 			"p7",
@@ -654,12 +655,12 @@
 		"selected_items":
 		[
 			[
-				"vindex",
-				"app/views/vehicles/index.html.erb"
-			],
-			[
 				"sche",
 				"db/schema.rb"
+			],
+			[
+				"vindex",
+				"app/views/vehicles/index.html.erb"
 			],
 			[
 				"edit",
@@ -716,6 +717,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 282.0,
+	"side_bar_width": 412.0,
 	"status_bar_visible": true
 }

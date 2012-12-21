@@ -1,0 +1,8 @@
+<h1>WeeklyReview#index</h1>
+<table>
+  <% @dates.each do |date| %>
+    <tr>
+      <td><%= date.strftime("Week %U - %A %D") %></td>
+    </tr>
+  <% end %>
+</table>

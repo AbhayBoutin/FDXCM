@@ -11,4 +11,14 @@ class User < ActiveRecord::Base
   attr_accessible :activeBoolean, :contractorBoolean
 
   has_many :userRoles
+  has_many :roles, :through => :userRoles
+
+  def thisUsersBusiness
+    self.employee.business
+  end
+
+  def has_role?(role)
+    return !!self.roles.find_by_name(role.to_s.camelize)
+  end
+
 end

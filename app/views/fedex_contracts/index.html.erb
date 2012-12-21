@@ -1,17 +1,27 @@
-<h1>Listing fedex_contracts</h1>
+<h1>Listing Fedex Contracts</h1>
 
 <table>
   <tr>
-    <th>Fedexcontractname</th>
-    <th>Fedexcontractnumber</th>
-    <th>Contractorcontractname</th>
-    <th>Contractorcontractnumber</th>
+    <th>F Contract Name</th>
+    <th>F Contract Name</th>
+    <th>C Contract Name</th>
+    <th>C Contract Number</th>
     <th>Content</th>
-    <th>Startdate</th>
-    <th>Enddate</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Start</th>
+    <th>End</th>
+    <th>Owning Business</th>
+    <th>dStop Pay</th>
+    <th>dPackage Pay</th>
+    <th>pStop Pay</th>
+    <th>pPackage Pay</th>
+    <th>Core Zone</th>
+    <th>Vehichle Availabiltity</th>
+    <th>Fuel Supp</th>
+    <th>Tool Rental</th>
+    <th>Intl' Pkg Pay</th>
+    <th>Hazardous Pkg Pay</th>
+    <th>Vacation Cost</th>
+    <th>Uniform</th>
   </tr>
 
 <% @fedex_contracts.each do |fedex_contract| %>
@@ -23,6 +33,19 @@
     <td><%= fedex_contract.content %></td>
     <td><%= fedex_contract.startDate %></td>
     <td><%= fedex_contract.endDate %></td>
+    <td><%= fedex_contract.businesses.name %></td>
+    <td><%= fedex_contract.deliveryStopPay %></td>
+    <td><%= fedex_contract.deliveryPackagePay %></td>
+    <td><%= fedex_contract.pickupStopPay %></td>
+    <td><%= fedex_contract.pickupPackagePay %></td>
+    <td><%= fedex_contract.coreZoneSupplementalPay %></td>
+    <td><%= fedex_contract.vehicleAvailabilityPay %></td>
+    <td><%= fedex_contract.fuelSupplementPay %></td>
+    <td><%= fedex_contract.toolRentalCost %></td>
+    <td><%= fedex_contract.internationalPackagePay %></td>
+    <td><%= fedex_contract.hazardousPackagePay %></td>
+    <td><%= fedex_contract.vacationProgramCost %></td>
+    <td><%= fedex_contract.uniformCost %></td>
     <td><%= link_to 'Show', fedex_contract %></td>
     <td><%= link_to 'Edit', edit_fedex_contract_path(fedex_contract) %></td>
     <td><%= link_to 'Destroy', fedex_contract, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -32,4 +55,4 @@
 
 <br />
 
-<%= link_to 'New Fedex contract', new_fedex_contract_path %>
+<%= link_to 'New Fedex Contract', new_fedex_contract_path %>

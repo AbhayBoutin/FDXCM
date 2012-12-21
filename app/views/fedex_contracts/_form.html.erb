@@ -12,32 +12,97 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :fedexContractName %><br />
+    <%= f.label :'Fedex\'s Contract Name' %><br />
     <%= f.text_field :fedexContractName %>
   </div>
   <div class="field">
-    <%= f.label :fedexContractNumber %><br />
+    <%= f.label :'Fedex\'s Contract Number' %><br />
     <%= f.number_field :fedexContractNumber %>
   </div>
   <div class="field">
-    <%= f.label :contractorContractName %><br />
+    <%= f.label :'Your personal name for the Contract' %><br />
     <%= f.text_field :contractorContractName %>
   </div>
   <div class="field">
-    <%= f.label :contractorContractNumber %><br />
+    <%= f.label :'Your personal number for the Contract' %><br />
     <%= f.number_field :contractorContractNumber %>
   </div>
   <div class="field">
-    <%= f.label :content %><br />
+    <%= f.label :'Content Text' %><br />
     <%= f.text_area :content %>
   </div>
   <div class="field">
-    <%= f.label :startDate %><br />
+    <%= f.label :Start %><br />
     <%= f.datetime_select :startDate %>
   </div>
   <div class="field">
-    <%= f.label :endDate %><br />
+    <%= f.label :End %><br />
     <%= f.datetime_select :endDate %>
+  </div>
+  <!-- Business -->
+  <div class="field">
+    <%= f.label :'Which Business does this belong to' %><br />
+    <%= f.number_field :endDate, :value => 1 %>
+  </div>
+  <!-- dStop -->
+  <div class="field">
+    <%= f.label :'Delivery Stop Pay' %><br />
+    <%= f.number_field :deliveryStopPay %>
+  </div>
+  <!-- dPkg -->
+  <div class="field">
+    <%= f.label :'Delivery Package Pay' %><br />
+    <%= f.number_field :deliveryPackagePay %>
+  </div>
+  <!-- pStop -->
+  <div class="field">
+    <%= f.label :'Pickup Stop Pay' %><br />
+    <%= f.number_field :pickupStopPay %>
+  </div>
+  <!-- pPkg -->
+  <div class="field">
+    <%= f.label :'Pickup Package Pay' %><br />
+    <%= f.number_field :pickupPackagePay %>
+  </div>
+  <!-- core zone -->
+  <div class="field">
+    <%= f.label :'CoreZone Supplemental Pay' %><br />
+    <%= f.number_field :coreZoneSupplementalPay %>
+  </div>
+  <!-- vehicle availability -->
+  <div class="field">
+    <%= f.label :'Vehicle Availability Pay' %><br />
+    <%= f.number_field :vehicleAvailabilityPay %>
+  </div>
+  <!-- fuel supp -->
+  <div class="field">
+    <%= f.label :'Fuel Supplement Pay' %><br />
+    <%= f.number_field :fuelSupplementPay %>
+  </div>
+  <!-- tool rental -->
+  <div class="field">
+    <%= f.label :'Tool Rental Cost' %><br />
+    <%= f.number_field :toolRentalCost %>
+  </div>
+  <!-- intl pkg -->
+  <div class="field">
+    <%= f.label :'International Package Pay' %><br />
+    <%= f.number_field :internationalPackagePay %>
+  </div>
+  <!-- hazard pkg -->
+  <div class="field">
+    <%= f.label :'Hazardous Package Pay' %><br />
+    <%= f.number_field :hazardousPackagePay %>
+  </div>
+  <!-- vacation -->
+  <div class="field">
+    <%= f.label :'Vacation Program Cost' %><br />
+    <%= f.number_field :vacationProgramCost %>
+  </div>
+  <!-- uniform -->
+  <div class="field">
+    <%= f.label :'Uniform Cost' %><br />
+    <%= f.number_field :uniformCost %>
   </div>
   <div class="actions">
     <%= f.submit %>

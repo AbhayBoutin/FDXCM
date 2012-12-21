@@ -4,7 +4,7 @@ Fdxcm::Application.routes.draw do
   match "weekly_reviews" => 'weekly_review#index'
   get "weekly_review/index"
   get "weekly_review/edit"
-  get "weekly_review/show"
+  get "weekly_review/:id", to: 'weekly_review#show'
   get "weekly_review/update"
 
   authenticated :user do

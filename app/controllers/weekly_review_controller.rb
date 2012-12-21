@@ -3,8 +3,8 @@ class WeeklyReviewController < ApplicationController
   # Devise Authentication
   before_filter :authenticate_user!
 
-  def index
   # List all weeks that have data for this contractor
+  def index
     currentBusiness = current_user.thisUsersBusiness
     currentBusinessEmployees = currentBusiness.employees
     @dates = []
@@ -33,8 +33,9 @@ class WeeklyReviewController < ApplicationController
   def edit
   end
 
-  def show
   # Get Current Contractors Daily Data for a/the/current week that HAS data
+  def show
+    match ':controller/:action/:id'
   end
 
   def update

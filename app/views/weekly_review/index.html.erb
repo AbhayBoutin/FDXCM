@@ -1,6 +1,10 @@
 <h1>WeeklyReview#index</h1>
 <table>
   <% @dates.each do |date| %>
+    <% for date in @dates -%> 
+       <%= link_to %Q{#{weekly_review.week}}, {:controller => 
+    "weekly_review", :action => "index", :id => week.id }  %> 
+    <% end %> 
     <tr>
       <td><%= date.strftime("Week %U - %A %D") %></td>
     </tr>

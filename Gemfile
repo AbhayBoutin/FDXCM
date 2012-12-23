@@ -52,7 +52,8 @@ gem "binding_of_caller", ">= 0.6.8", :group => :development
 # gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+gem 'debugger'
+gem 'log_buddy'
 
 group :development, :test do
     gem 'railroady'

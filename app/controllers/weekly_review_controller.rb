@@ -35,37 +35,42 @@ class WeeklyReviewController < ApplicationController
 
   # Get Current Contractors Daily Data for a/the/current week that HAS data
   def show
-    @employeeDailyData = []
-    currentBusiness = current_user.thisUsersBusiness
-    currentBusinessEmployees = currentBusiness.employees.uniq
-    # match '/weekly_review/:weekreference' => 'weekly_review#show'
-    @weekStart = "Sun, 2 Dec 2012 00:00 -0500".to_datetime
+    @weeklyReviewData = []
+    # currentBusiness = current_user.thisUsersBusiness
+    currentBusinessEmployees = current_user.thisUsersBusiness.employees.uniq
+    @weekStart = "Mon, 3 Dec 2012 00:00 -0500".to_datetime
     @weekEnd = @weekStart+7.days-1.second
-    # currentBusinessEmployees.each do |t|
-    #   @dates << t.dailyData.minimum("startTime")
-    # end
 
-    # firstDayOfData = @dates.min
     @dates = []
-    # sundayOfDayOfData = firstDayOfData - firstDayOfData.wday.days
-    # currentDateToLoop = sundayOfDayOfData
+    dayOfData = @weekStart.to_date
+    while dayOfData < @weekEnd.to_date
+      @dates << dayOfData
+      dayOfData+=1.day
+    end
 
-    first = currentBusinessEmployees.first 
-    second = currentBusinessEmployees.second
-    third = currentBusinessEmployees.third
+    currentBusinessEmployees.each do |e|
+      # Vars
+      @employeeWeeklyData = []
+      # Names
+      @employeeWeeklyData << e.firstName + " " + e.lastName
+      # Days
+      # d { @dates }
+      @dates.each do |d|
+        dStop = e.dailyData.select("deliveryStop").where( "startTime BETWEEN ? AND ?", d.beginning_of_day, d.end_of_day )
+        dPkg = e.dailyData.select("deliveryPackage").where( "startTime BETWEEN ? AND ?", d.beginning_of_day, d.end_of_day )
+        pStop = e.dailyData.select("pickupStop").where( "startTime BETWEEN ? AND ?", d.beginning_of_day, d.end_of_day ).to_a
+        pPkg = e.dailyData.select("pickupPackage").where( "startTime BETWEEN ? AND ?", d.beginning_of_day, d.end_of_day ).to_a
+        iLS = e.dailyData.select("inboundLocalService").where( "startTime BETWEEN ? AND ?", d.beginning_of_day, d.end_of_day ).to_a
+        @employeeWeeklyData << dStop << dPkg << pStop << pPkg << iLS
+      end
+      # DailyData
+      @weeklyReviewData << @employeeWeeklyData
+    d { @employeeWeeklyData }
+    end
 
-    # @first = first.dailyData
-    # @first = first.dailyData.where( "startTime > ? AND endTime < ?", @weekStart, @weekEnd )
-    # @first = first.dailyData.deliveryStop
+    # d { @weeklyReviewData }
 
-    # currentBusinessEmployees.each do |t|
-    #   # Names
-    #   @employeeDailyData << t.firstName + " " + t.lastName
-    #   # DailyData
-    #   @employeeDailyData << t.dailyData.where( "startTime > ? AND endTime < ?", @weekStart, @weekEnd ).each
-    # end
-
-    @employeeDailyData = [["adam", 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5],
+    @weeklyReviewData = [["adam", 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5],
                           ["boy", 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5],
                           ["charles", 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5],
                           ["david", 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5],
@@ -77,7 +82,7 @@ class WeeklyReviewController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.haml
-      format.json { render json: @employeeDailyData }
+      format.json { render json: @weeklyReviewData }
     end
 
   end

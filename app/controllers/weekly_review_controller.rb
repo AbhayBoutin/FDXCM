@@ -36,8 +36,8 @@ class WeeklyReviewController < ApplicationController
   # Get Current Contractors Daily Data for a/the/current week that HAS data
   def show
     @weeklyReviewData = []
-    # currentBusiness = current_user.thisUsersBusiness
-    currentBusinessEmployees = current_user.thisUsersBusiness.employees.uniq
+    currentBusiness = current_user.thisUsersBusiness
+    currentBusinessEmployees = currentBusiness.employees
     @weekStart = "Mon, 3 Dec 2012 00:00 -0500".to_datetime
     @weekEnd = @weekStart+7.days-1.second
 

@@ -107,7 +107,7 @@ Psazip.create({ :psa_id => nil, :zip_id => nil, :created_at => "Sun, 1 Jan 2012 
   wilm = Terminal.create({ :fedexTerminalName => "WILM", :fedexTerminalNumber => 284, :contractorTerminalName => "Beach", :contractorTerminalNumber => "3", :colocationBoolean => false, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil, :regions_id => central.id }, :without_protection => true )
 
 # User
-  User.create({ :contractorBoolean => nil, :activeBoolean => nil, :employee_id => nil, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil, :email => "", :encrypted_password => "", :reset_password_token => nil, :reset_password_sent_at => nil, :remember_created_at => nil, :sign_in_count => 0, :current_sign_in_at => nil, :last_sign_in_at => nil, :current_sign_in_ip => nil, :last_sign_in_ip => nil }, :without_protection => true )
+  adamUser = User.create({ :contractorBoolean => true, :activeBoolean => true, :employee_id => adam.id, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil, :email => "adam@specialorange.org", :password => "adamadam", :password_confirmation => "adamadam", :encrypted_password => "", :reset_password_token => nil, :reset_password_sent_at => nil, :remember_created_at => nil, :sign_in_count => 0, :current_sign_in_at => nil, :last_sign_in_at => nil, :current_sign_in_ip => nil, :last_sign_in_ip => nil }, :without_protection => true )
 
 # VehicleFuel
   gas20 = VehicleFuel.create({ :fuelType => "Gas", :fuelTankSize => "20", :mpg => 10, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
@@ -145,7 +145,7 @@ Psazip.create({ :psa_id => nil, :zip_id => nil, :created_at => "Sun, 1 Jan 2012 
 # REFERENCING &&&&&&&&&&&&&&&&&&&&&&&&& REFERENCING &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& REFERENCING &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& REFERENCING
 
 # UserRole
-  UserRole.create({ :user_id => nil, :role_id => nil, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
+  UserRole.create({ :user_id => 1, :role_id => 1, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
 
 # Vehicle
   v1 = Vehicle.create({ :fedexVehicleNumber => "71234", :fedexVehicleName => nil, :contractorNumber => "71234", :contractorName => "Carrot", :vin => "1FTZX1729WNA55381", :startDate => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :endDate => nil, :activeBoolean => true, :vehicleType_id => p700.id, :vehicleFuel_id => gas20.id, :vehicleOdometer_id => newmiles.id, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil, :service_type_id => ground.id, :business_id => business1.id }, :without_protection => true )

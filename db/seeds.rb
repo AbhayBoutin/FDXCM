@@ -14,7 +14,7 @@
 	addendum3 = Addendum.create({ :fedexAddendumName => "I", :fedexAddendumNumber => "04042012", :fedexContractorAddendumName => "Increased Fuel Pay", :fedexContractorAddendumNumber => "3", :content => "This is a whole bunch of text about what the Addendum is and is about.", :startDate => "Thu, 1 Mar 2012 01:01:01 -0500".to_datetime, :endDate => nil, :created_at => "Thu, 1 Mar 2012 01:01:01 -0500".to_datetime, :updated_at => nil, :fedexContract_id => business1.id }, :without_protection => true )
 
 # DailyDataDeliveryException
-DailyDataDeliveryException.create({ :startDate => nil, :endDate => nil, :dailyData_id => nil, :deliveryException_id => nil, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
+# DailyDataDeliveryException.create({ :startDate => nil, :endDate => nil, :dailyDatum_id => nil, :deliveryException_id => nil, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
 
 DailyDataVehicle.create({ :vehicle_id => nil, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil, :daily_data_id => nil }, :without_protection => true )
 
@@ -173,19 +173,19 @@ Psazip.create({ :psa_id => nil, :zip_id => nil, :created_at => "Sun, 1 Jan 2012 
   ddf3 = DailyDatum.create({ :deliveryStop => 150, :deliveryPackage => 151, :pickupStop => 152, :pickupPackage => 153, :calltag => 15, :didNotAttempt => 0, :inboundLocalService => 98.9, :earlyPickUp => 1, :latePickUp => 0, :startTime => "Mon, 3 Dec 2012 08:00:00 -0500".to_datetime, :endTime => "Mon, 3 Dec 2012 17:00:00 -0500".to_datetime, :created_at => "Sun, 9 Dec 2012 12:00:00 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
 
 # DailyDataEmployee
-DailyDataEmployee.create({ :employee_id => adam.id, :dailyData_id => ddm1.id, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
-DailyDataEmployee.create({ :employee_id => boy.id, :dailyData_id => ddm2.id, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
-DailyDataEmployee.create({ :employee_id => charles.id, :dailyData_id => ddm3.id, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
-DailyDataEmployee.create({ :employee_id => adam.id, :dailyData_id => ddt1.id, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
-DailyDataEmployee.create({ :employee_id => boy.id, :dailyData_id => ddt2.id, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
-DailyDataEmployee.create({ :employee_id => charles.id, :dailyData_id => ddt3.id, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
-DailyDataEmployee.create({ :employee_id => adam.id, :dailyData_id => ddw1.id, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
-DailyDataEmployee.create({ :employee_id => boy.id, :dailyData_id => ddw2.id, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
-DailyDataEmployee.create({ :employee_id => charles.id, :dailyData_id => ddw3.id, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
-DailyDataEmployee.create({ :employee_id => adam.id, :dailyData_id => ddr1.id, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
-DailyDataEmployee.create({ :employee_id => boy.id, :dailyData_id => ddr2.id, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
-DailyDataEmployee.create({ :employee_id => charles.id, :dailyData_id => ddr3.id, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
-DailyDataEmployee.create({ :employee_id => adam.id, :dailyData_id => ddf1.id, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
-DailyDataEmployee.create({ :employee_id => boy.id, :dailyData_id => ddf2.id, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
-DailyDataEmployee.create({ :employee_id => charles.id, :dailyData_id => ddf3.id, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
+DailyDataEmployee.create({ :employee_id => adam.id, :dailyDatum_id => ddm1.id, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
+DailyDataEmployee.create({ :employee_id => boy.id, :dailyDatum_id => ddm2.id, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
+DailyDataEmployee.create({ :employee_id => charles.id, :dailyDatum_id => ddm3.id, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
+DailyDataEmployee.create({ :employee_id => adam.id, :dailyDatum_id => ddt1.id, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
+DailyDataEmployee.create({ :employee_id => boy.id, :dailyDatum_id => ddt2.id, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
+DailyDataEmployee.create({ :employee_id => charles.id, :dailyDatum_id => ddt3.id, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
+DailyDataEmployee.create({ :employee_id => adam.id, :dailyDatum_id => ddw1.id, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
+DailyDataEmployee.create({ :employee_id => boy.id, :dailyDatum_id => ddw2.id, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
+DailyDataEmployee.create({ :employee_id => charles.id, :dailyDatum_id => ddw3.id, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
+DailyDataEmployee.create({ :employee_id => adam.id, :dailyDatum_id => ddr1.id, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
+DailyDataEmployee.create({ :employee_id => boy.id, :dailyDatum_id => ddr2.id, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
+DailyDataEmployee.create({ :employee_id => charles.id, :dailyDatum_id => ddr3.id, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
+DailyDataEmployee.create({ :employee_id => adam.id, :dailyDatum_id => ddf1.id, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
+DailyDataEmployee.create({ :employee_id => boy.id, :dailyDatum_id => ddf2.id, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
+DailyDataEmployee.create({ :employee_id => charles.id, :dailyDatum_id => ddf3.id, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
 

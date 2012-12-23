@@ -73,6 +73,7 @@ GEM
       factory_girl (~> 4.1.0)
       railties (>= 3.0.0)
     ffi (1.2.0)
+    haml (3.1.7)
     hike (1.2.1)
     i18n (0.6.1)
     journey (1.0.4)
@@ -174,6 +175,7 @@ DEPENDENCIES
   devise
   email_spec (>= 1.4.0)
   factory_girl_rails (>= 4.1.0)
+  haml
   jquery-rails
   launchy (>= 2.1.2)
   paper_trail

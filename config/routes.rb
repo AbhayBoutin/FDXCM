@@ -1,10 +1,13 @@
 Fdxcm::Application.routes.draw do
 
 # Weekly Review
-  match "weekly_reviews" => 'weekly_review#index'
+  match "weekly_review" => 'weekly_review#index'
+  # match "weekly_reviews/:weekreference" => 'weekly_review#show'
+  # , :requirements => { :date => /\d{4}*/ }
   get "weekly_review/index"
   get "weekly_review/edit"
-  get "weekly_review/:id", to: 'weekly_review#show'
+  get "weekly_review/:weekreference", to: 'weekly_review#show'#, as: 'weekreference'
+  get "weekly_review/show/:weekreference", to: 'weekly_review#show'
   get "weekly_review/update"
 
   authenticated :user do
@@ -133,6 +136,7 @@ Fdxcm::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
+
   # CHRIS.DEVISE
   root :to => "home#index"
   

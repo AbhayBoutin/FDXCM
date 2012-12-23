@@ -1,0 +1,39 @@
+%h1 = Weekly Review - 
+
+.weeklyReview
+  %pre
+    %table
+      %tbody
+        / %col{:span => 2, :id => "Name"}
+        / %col{:span => 5, :id => "Monday"}
+        / %col{:span => 5, :id => "Tuesday"}
+        / %col{:span => 5, :id => "Wednesday"}
+        / %col{:span => 5, :id => "Thursday"}
+        / %col{:span => 5, :id => "Friday"}
+        / %col{:span => 5, :id => "Saturday"}
+        %tr
+          %th{:rowspan => 2, :class => "top"} Name
+          %th{:colspan => 5, :class => "top"} Monday
+          %th{:colspan => 5, :class => "top"} Tuesday
+          %th{:colspan => 5, :class => "top"} Wednesday
+          %th{:colspan => 5, :class => "top"} Thursday
+          %th{:colspan => 5, :class => "top"} Friday
+          %th{:colspan => 5, :class => "top"} Saturday
+        %tr
+          - 6.times do
+            %th{:class => "bottom"} D-Stop
+            %th{:class => "bottom"} D-Pkg
+            %th{:class => "bottom"} P-Stop
+            %th{:class => "bottom"} P-Pkg
+            / %th{:class => "bottom"} Calltag
+            / %th{:class => "bottom"} DNA
+            %th{:class => "bottom"} ILS
+            / %th{:class => "bottom"} EPUs
+            / %th{:class => "bottom"} LPUs
+            / %th{:class => "bottom"} Start
+            / %th{:class => "bottom"} End
+
+        - @employeeDailyData.each do |row|
+          %tr
+            - row.each do |column|
+              %td= column

@@ -1,3 +1,36 @@
 // Place all the styles related to the WeeklyReview controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.weeklyReview pre {
+  overflow: auto!important;
+  padding: 5px;
+  width: auto;
+  white-space: pre!important;
+  text-align: center;
+}
+.weeklyReview th {
+  background: lightblue;
+}
+.weeklyReview tr:nth-of-type(2n+1) {
+  background: white;
+}
+.weeklyReview tr:nth-of-type(2n) {
+  background: lightgray;
+}
+.weeklyReview th.top:nth-of-type(n+2) {
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.weeklyReview th.bottom:nth-of-type(n) {
+  border-left: 1px dotted orange;
+}
+.weeklyReview th.bottom:nth-of-type(5n+1) {
+  border-left: 1px solid black!important;
+}
+.weeklyReview td:nth-of-type(5n-3) {
+  border-left: 1px solid black!important;
+}
+.weeklyReview td:nth-of-type(n+2) {
+  border-left: 1px dotted orange;
+}

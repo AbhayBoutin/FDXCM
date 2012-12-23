@@ -1,7 +1,7 @@
 class WeeklyReviewController < ApplicationController
 
   # Devise Authentication
-  before_filter :authenticate_user!
+  # before_filter :authenticate_user!
 
   # List all weeks that have data for this contractor
   def index

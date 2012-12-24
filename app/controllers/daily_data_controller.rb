@@ -1,4 +1,4 @@
-class DailyDataController < ApplicationController
+class DailyDataController < ApplicationController  
   # GET /daily_data
   # GET /daily_data.json
   def index
@@ -25,9 +25,13 @@ class DailyDataController < ApplicationController
   # GET /daily_data/new.json
   def new
     @daily_datum = DailyDatum.new
+    
+    currentBusiness = current_user.thisUsersBusiness
+    currentBusinessEmployees = currentBusiness.employees
+    @daily_datum = currentBusinessEmployees
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html # new.html.haml
       format.json { render json: @daily_datum }
     end
   end

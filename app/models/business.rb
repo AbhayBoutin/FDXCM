@@ -7,4 +7,9 @@ class Business < ActiveRecord::Base
   has_many :psas
   has_many :employees
   has_many :vehicles
+
+  def thisBusinesssEmployees
+    self.employees
+  end
+
 end

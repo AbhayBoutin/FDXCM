@@ -1,3 +1,52 @@
 // Place all the styles related to the DailyData controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.dailyDataNew pre {
+  overflow: auto!important;
+  /*padding: 5px;*/
+  width: auto;
+  height: auto;
+  white-space: pre-wrap;
+  text-align: center;
+  vertical-align: center;
+}
+.dailyDataNew th {
+  background: lightblue;
+}
+.dailyDataNew tr:nth-of-type(2n+1) {
+  background: white;
+}
+.dailyDataNew tr:nth-of-type(2n) {
+  background: lightgray;
+}
+.dailyDataNew th.top:nth-of-type(n+2) {
+  border-left: 1px solid black;
+}
+.dailyDataNew th.middle:nth-of-type(n+2) {
+  border-left: 1px solid black;
+}
+.dailyDataNew th.middle:nth-of-type(n) {
+  border-bottom: 1px solid black;
+}
+.dailyDataNew th.bottom:nth-of-type(n) {
+  border-left: 1px dotted orange;
+  border-bottom: 1px solid black;
+}
+.dailyDataNew th.bottom:nth-of-type(11n+2) {
+  border-left: 1px solid black!important;
+}
+.dailyDataNew td:nth-of-type(n+2) {
+  border-left: 1px dotted orange;
+}
+.dailyDataNew td:nth-of-type(11n+2) {
+  border-left: 1px solid black!important;
+}
+.dailyDataNew td input {
+  width: 50px;
+  margin: 0!important;
+}
+.dailyDataNew * {
+  padding: 3px;
+  margin: 3px;
+}

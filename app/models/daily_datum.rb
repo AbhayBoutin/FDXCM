@@ -11,4 +11,9 @@ class DailyDatum < ActiveRecord::Base
 
 	has_many :dailyDataDeliveryExceptions
 	has_many :deliveryExceptions, :through => :dailyDataDeliveryExceptions
+
+  def thisDailyDatumsEmployees
+    current_user.business.employees
+  end
+
 end

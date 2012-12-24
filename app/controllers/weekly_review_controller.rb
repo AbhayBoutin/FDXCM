@@ -10,7 +10,10 @@ class WeeklyReviewController < ApplicationController
     @dates = []
 
     currentBusinessEmployees.each do |t|
-      @dates << t.dailyData.minimum("startTime")
+      # Make sure only weeks with data are considered
+      if t.dailyData.minimum("startTime") != nil
+        @dates << t.dailyData.minimum("startTime")
+      end
     end
 
     firstDayOfData = @dates.min
@@ -23,6 +26,9 @@ class WeeklyReviewController < ApplicationController
       currentDateToLoop += 7.days
     end
 
+    # TOGGLE ON PUT IN REVERSE ORDER/ OFF TO PUT IN REGULAR ORDER 
+    @dates.reverse!
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @dates }
@@ -58,9 +64,9 @@ class WeeklyReviewController < ApplicationController
       @dates.each do |d|
         dStop = e.dailyData.select("deliveryStop").where( "startTime BETWEEN ? AND ?", d.beginning_of_day, d.end_of_day )
         dPkg = e.dailyData.select("deliveryPackage").where( "startTime BETWEEN ? AND ?", d.beginning_of_day, d.end_of_day )
-        pStop = e.dailyData.select("pickupStop").where( "startTime BETWEEN ? AND ?", d.beginning_of_day, d.end_of_day ).to_a
-        pPkg = e.dailyData.select("pickupPackage").where( "startTime BETWEEN ? AND ?", d.beginning_of_day, d.end_of_day ).to_a
-        iLS = e.dailyData.select("inboundLocalService").where( "startTime BETWEEN ? AND ?", d.beginning_of_day, d.end_of_day ).to_a
+        pStop = e.dailyData.select("pickupStop").where( "startTime BETWEEN ? AND ?", d.beginning_of_day, d.end_of_day )
+        pPkg = e.dailyData.select("pickupPackage").where( "startTime BETWEEN ? AND ?", d.beginning_of_day, d.end_of_day )
+        iLS = e.dailyData.select("inboundLocalService").where( "startTime BETWEEN ? AND ?", d.beginning_of_day, d.end_of_day )
         @employeeWeeklyData << dStop << dPkg << pStop << pPkg << iLS
       end
       # DailyData

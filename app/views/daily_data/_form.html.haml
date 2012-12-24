@@ -1,0 +1,62 @@
+%h1 = Daily Data Week Entry - 
+
+.dailyDataNew
+  %table
+    %tbody
+      %tr
+        %th{:rowspan => 2, :class => "middle"} Select Date
+        %th{:colspan => 11, :class => "top"} Day Of Week
+      %tr
+        %th{:colspan => 11, :class => "middle"} Date of Day
+      %tr
+        %th{:rowspan => 1, :class => "bottom"} Name
+        %th{:class => "bottom"} D-Stop
+        %th{:class => "bottom"} D-Pkg
+        %th{:class => "bottom"} P-Stop
+        %th{:class => "bottom"} P-Pkg
+        %th{:class => "bottom"} Calltag
+        %th{:class => "bottom"} DNA
+        %th{:class => "bottom"} ILS
+        %th{:class => "bottom"} EPUs
+        %th{:class => "bottom"} LPUs
+        %th{:class => "bottom"} Start
+        %th{:class => "bottom"} End
+      - @daily_datum.each do |e|
+        %tr
+          %td
+            = e.firstName + " " + e.lastName
+          %td
+            .field
+              %input{:name => "deliveryStop", :type => "number"}
+          %td
+            .field
+              %input{:name => "deliveryPackage", :type => "number"}
+          %td
+            .field
+              %input{:name => "pickupStop", :type => "number"}
+          %td
+            .field
+              %input{:name => "pickupPackage", :type => "number"}
+          %td
+            .field
+              %input{:name => "callTag", :type => "number"}
+          %td
+            .field
+              %input{:name => "didNotAttempt", :type => "number"}
+          %td
+            .field
+              %input{:name => "inboundLocalService", :type => "number"}
+          %td
+            .field
+              %input{:name => "earlyPickUp", :type => "number"}
+          %td
+            .field
+              %input{:name => "latePickUp", :type => "number"}
+          %td
+            .field
+              %input{:name => "startTime", :type => "time"}
+          %td
+            .field
+              %input{:name => "endTime", :type => "time"}
+  .actions
+    %input{:name => "commit", :type => "submit", :value => "Create DD", :class => "button"}

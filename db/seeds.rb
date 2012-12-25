@@ -118,10 +118,10 @@
 
 # Role
   puts 'SETTING UP Role'
-  admin = Role.create({ :name => "admin", :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
-  owner = Role.create({ :name => "owner", :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
-  manager = Role.create({ :name => "manager", :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
-  employee = Role.create({ :name => "employee", :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
+  admin = Role.create({ :name => "Admin", :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
+  owner = Role.create({ :name => "Owner", :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
+  manager = Role.create({ :name => "Manager", :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
+  employee = Role.create({ :name => "Employee", :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
 
 # ServiceType
   puts 'SETTING UP ServiceType'
@@ -193,6 +193,10 @@
 # UserRole
   puts 'SETTING UP UserRole'
   UserRole.create({ :user_id => 1, :role_id => 1, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
+  UserRole.create({ :user_id => 1, :role_id => 2, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
+  UserRole.create({ :user_id => 1, :role_id => 3, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
+  UserRole.create({ :user_id => 2, :role_id => 3, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
+  UserRole.create({ :user_id => 2, :role_id => 4, :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
 
 # Vehicle
   puts 'SETTING UP Vehicle'

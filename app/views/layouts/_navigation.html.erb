@@ -1,26 +1,39 @@
-<%= link_to "FDXCM", root_path, :class => 'brand' %>
-<ul class="nav pull-right">
+<div class="nav pull-left">
+  <%= link_to "FDXCM", root_path, :class => 'brand' %>
+</div>
+<div class="nav info">
   <% if user_signed_in? %>
-    <li>
-    <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>        
-    </li>
+    <div><%= 'User: ' + current_user.employee.firstName + ' ' + current_user.employee.lastName + " | " %>
+    <%= 'Business: ' + current_user.employee.business.name + " | " %>
+    <%= 'Role: ' + current_user.thisUsersUserRole %></div>
   <% else %>
-    <li>
-    <%= link_to('Login', new_user_session_path)  %>  
-    </li>
+    <div></div>
   <% end %>
-  <% if user_signed_in? %>
-    <li>
-    <%= link_to('Edit account', edit_user_registration_path) %>
-    </li>
-    <% if current_user.has_role? :admin %>
+</div>
+<div class="pull-right">
+  <ul class="nav">
+    <% if user_signed_in? %>
       <li>
-      <%= link_to('Admin', users_path) %>
+      <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>        
+      </li>
+    <% else %>
+      <li>
+      <%= link_to('Login', new_user_session_path)  %>  
       </li>
     <% end %>
-  <% else %>
-    <li>
-    <%= link_to('Sign up', new_user_registration_path)  %>
-    </li>
-  <% end %>
-</ul>
+    <% if user_signed_in? %>
+      <li>
+      <%= link_to('Edit account', edit_user_registration_path) %>
+      </li>
+      <% if current_user.has_role? :admin %>
+        <li>
+        <%= link_to('Admin', users_path) %>
+        </li>
+      <% end %>
+    <% else %>
+      <li>
+      <%= link_to('Sign up', new_user_registration_path)  %>
+      </li>
+    <% end %>
+  </ul>
+</div>

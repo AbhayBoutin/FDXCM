@@ -3,4 +3,9 @@ class Role < ActiveRecord::Base
 
 	has_many :userRoles
 	has_many :users, :through => :userRoles
+
+  def roleName
+    self.name
+  end
+
 end

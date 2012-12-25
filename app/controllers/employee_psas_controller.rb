@@ -1,4 +1,7 @@
 class EmployeePsasController < ApplicationController
+  # CanCan
+  # load_and_authorize_resource
+
   # GET /employee_psas
   # GET /employee_psas.json
   def index

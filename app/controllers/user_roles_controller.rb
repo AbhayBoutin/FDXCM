@@ -1,4 +1,7 @@
 class UserRolesController < ApplicationController
+  # CanCan
+  # load_and_authorize_resource
+
   # GET /user_roles
   # GET /user_roles.json
   def index

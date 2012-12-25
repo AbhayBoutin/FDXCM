@@ -1,4 +1,7 @@
 class PsaStatesController < ApplicationController
+  # CanCan
+  # load_and_authorize_resource
+
   # GET /psa_states
   # GET /psa_states.json
   def index

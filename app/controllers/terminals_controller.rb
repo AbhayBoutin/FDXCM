@@ -1,4 +1,7 @@
 class TerminalsController < ApplicationController
+  # CanCan
+  # load_and_authorize_resource
+
   # GET /terminals
   # GET /terminals.json
   def index

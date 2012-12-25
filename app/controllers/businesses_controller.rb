@@ -1,4 +1,7 @@
 class BusinessesController < ApplicationController
+  # CanCan
+  # load_and_authorize_resource
+
   # GET /businesses
   # GET /businesses.json
   def index

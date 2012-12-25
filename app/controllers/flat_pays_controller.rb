@@ -1,4 +1,7 @@
 class FlatPaysController < ApplicationController
+  # CanCan
+  # load_and_authorize_resource
+
   # GET /flat_pays
   # GET /flat_pays.json
   def index

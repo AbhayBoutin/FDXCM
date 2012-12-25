@@ -1,4 +1,6 @@
 class WeeklyReviewController < ApplicationController
+  # CanCan
+  # load_and_authorize_resource
 
   # Devise Authentication
   # before_filter :authenticate_user!

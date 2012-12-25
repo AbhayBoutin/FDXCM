@@ -1,4 +1,7 @@
 class PsazipsController < ApplicationController
+  # CanCan
+  # load_and_authorize_resource
+
   # GET /psazips
   # GET /psazips.json
   def index

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121221083854) do
+ActiveRecord::Schema.define(:version => 20121225020158) do
 
   create_table "addendums", :force => true do |t|
     t.string   "fedexAddendumName"
@@ -167,7 +167,6 @@ ActiveRecord::Schema.define(:version => 20121221083854) do
     t.datetime "endDate"
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
-    t.integer  "businesses_id"
     t.decimal  "deliveryStopPay"
     t.decimal  "deliveryPackagePay"
     t.decimal  "pickupStopPay"
@@ -180,6 +179,7 @@ ActiveRecord::Schema.define(:version => 20121221083854) do
     t.decimal  "hazardousPackagePay"
     t.decimal  "vacationProgramCost"
     t.decimal  "uniformCost"
+    t.integer  "business_id"
   end
 
   create_table "flat_pays", :force => true do |t|
@@ -268,7 +268,8 @@ ActiveRecord::Schema.define(:version => 20121221083854) do
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
     t.integer  "regions_id"
-    t.integer  "businesses_id"
+    t.boolean  "supplementalBoolean"
+    t.integer  "business_id"
   end
 
   create_table "psazips", :force => true do |t|

@@ -1,4 +1,7 @@
 class DailyDataDeliveryExceptionsController < ApplicationController
+  # CanCan
+  # load_and_authorize_resource
+
   # GET /daily_data_delivery_exceptions
   # GET /daily_data_delivery_exceptions.json
   def index

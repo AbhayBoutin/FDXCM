@@ -1,4 +1,7 @@
 class NotesController < ApplicationController
+  # CanCan
+  # load_and_authorize_resource
+
   # GET /notes
   # GET /notes.json
   def index

@@ -1,4 +1,7 @@
 class ServiceTypesController < ApplicationController
+  # CanCan
+  # load_and_authorize_resource
+
   # GET /service_types
   # GET /service_types.json
   def index

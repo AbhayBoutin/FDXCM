@@ -1,4 +1,7 @@
 class VehicleOdometersController < ApplicationController
+  # CanCan
+  # load_and_authorize_resource
+
   # GET /vehicle_odometers
   # GET /vehicle_odometers.json
   def index

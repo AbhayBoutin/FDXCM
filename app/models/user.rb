@@ -17,6 +17,14 @@ class User < ActiveRecord::Base
     self.employee.business
   end
 
+  def thisUsersBusinessPsas
+    self.thisUsersBusiness.psas
+  end
+
+  def thisUsersBusinessEmployees
+    self.thisUsersBusiness.employees
+  end
+
   def has_role?(role)
     return !!self.roles.find_by_name(role.to_s.camelize)
   end

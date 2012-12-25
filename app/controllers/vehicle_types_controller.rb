@@ -1,4 +1,7 @@
 class VehicleTypesController < ApplicationController
+  # CanCan
+  # load_and_authorize_resource
+
   # GET /vehicle_types
   # GET /vehicle_types.json
   def index

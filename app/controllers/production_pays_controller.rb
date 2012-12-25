@@ -1,4 +1,7 @@
 class ProductionPaysController < ApplicationController
+  # CanCan
+  # load_and_authorize_resource
+
   # GET /production_pays
   # GET /production_pays.json
   def index

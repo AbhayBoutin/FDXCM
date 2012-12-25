@@ -1,4 +1,7 @@
 class FedexContractsController < ApplicationController
+  # CanCan
+  # load_and_authorize_resource
+
   # GET /fedex_contracts
   # GET /fedex_contracts.json
   def index

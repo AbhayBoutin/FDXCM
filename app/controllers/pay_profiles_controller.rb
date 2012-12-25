@@ -1,4 +1,7 @@
 class PayProfilesController < ApplicationController
+  # CanCan
+  # load_and_authorize_resource
+
   # GET /pay_profiles
   # GET /pay_profiles.json
   def index

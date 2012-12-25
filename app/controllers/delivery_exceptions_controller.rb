@@ -1,4 +1,7 @@
 class DeliveryExceptionsController < ApplicationController
+  # CanCan
+  # load_and_authorize_resource
+
   # GET /delivery_exceptions
   # GET /delivery_exceptions.json
   def index

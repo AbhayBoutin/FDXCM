@@ -1,4 +1,7 @@
 class DailyDataEmployeesController < ApplicationController
+  # CanCan
+  # load_and_authorize_resource
+
   # GET /daily_data_employees
   # GET /daily_data_employees.json
   def index

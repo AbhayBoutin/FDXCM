@@ -1,4 +1,7 @@
 class FrequenciesController < ApplicationController
+  # CanCan
+  # load_and_authorize_resource
+
   # GET /frequencies
   # GET /frequencies.json
   def index

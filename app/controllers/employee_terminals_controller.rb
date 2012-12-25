@@ -1,4 +1,7 @@
 class EmployeeTerminalsController < ApplicationController
+  # CanCan
+  # load_and_authorize_resource
+
   # GET /employee_terminals
   # GET /employee_terminals.json
   def index

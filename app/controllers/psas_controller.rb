@@ -1,4 +1,7 @@
 class PsasController < ApplicationController
+  # CanCan
+  # load_and_authorize_resource
+
   # GET /psas
   # GET /psas.json
   def index

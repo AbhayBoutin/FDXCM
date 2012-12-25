@@ -1,4 +1,7 @@
 class VehicleFuelsController < ApplicationController
+  # CanCan
+  # load_and_authorize_resource
+
   # GET /vehicle_fuels
   # GET /vehicle_fuels.json
   def index

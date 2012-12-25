@@ -1,4 +1,7 @@
 class EmployeePaysController < ApplicationController
+  # CanCan
+  # load_and_authorize_resource
+
   # GET /employee_pays
   # GET /employee_pays.json
   def index

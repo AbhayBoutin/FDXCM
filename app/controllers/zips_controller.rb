@@ -1,4 +1,7 @@
 class ZipsController < ApplicationController
+  # CanCan
+  # load_and_authorize_resource
+
   # GET /zips
   # GET /zips.json
   def index

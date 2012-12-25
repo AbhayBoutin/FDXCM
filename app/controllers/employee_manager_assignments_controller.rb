@@ -1,4 +1,7 @@
 class EmployeeManagerAssignmentsController < ApplicationController
+  # CanCan
+  # load_and_authorize_resource
+
   # GET /employee_manager_assignments
   # GET /employee_manager_assignments.json
   def index

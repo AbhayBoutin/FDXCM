@@ -1,4 +1,7 @@
 class RegionsController < ApplicationController
+  # CanCan
+  # load_and_authorize_resource
+
   # GET /regions
   # GET /regions.json
   def index

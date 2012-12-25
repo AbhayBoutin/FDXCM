@@ -1,4 +1,7 @@
 class DailyDataVehiclesController < ApplicationController
+  # CanCan
+  # load_and_authorize_resource
+
   # GET /daily_data_vehicles
   # GET /daily_data_vehicles.json
   def index

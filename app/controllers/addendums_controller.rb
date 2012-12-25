@@ -1,4 +1,7 @@
 class AddendumsController < ApplicationController
+  # CanCan
+  # load_and_authorize_resource
+
   # GET /addendums
   # GET /addendums.json
   def index

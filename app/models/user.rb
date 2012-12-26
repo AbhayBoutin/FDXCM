@@ -32,7 +32,6 @@ class User < ActiveRecord::Base
     end
     role_hash_with_smallest_id = arrayOfUserRoles.min_by {|role_hash| role_hash['id']}
     role_hash_with_smallest_id['name']
-
   end
 
   def has_role?(role)

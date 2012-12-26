@@ -11,3 +11,15 @@ git filter-branch --index-filter 'git rm --cached --ignore-unmatch DFD\ Employee
 git filter-branch --index-filter 'git rm --cached --ignore-unmatch working\ template.xlsx' \--prune-empty --tag-name-filter cat -- --all
 
 git push origin master --force
+
+<!-- User.rb -->
+def thisUsersUserRole
+  arrayOfUserRoles = []
+  self.userRoles.each do |ur|
+    arrayOfUserRoles << { "id" => ur.role_id, "name" => ur.roleName }
+  end
+  role_hash_with_smallest_id = arrayOfUserRoles.min_by {|role_hash| role_hash['id']}
+  role_hash_with_smallest_id['name']
+end
+
+¿¿¿why the .min_by???

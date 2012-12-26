@@ -5,7 +5,7 @@ class EmployeesController < ApplicationController
   # GET /employees
   # GET /employees.json
   def index
-    @employees = Employee.all
+    @employees = current_user.thisUsersBusinessEmployees
 
     respond_to do |format|
       format.html # index.html.erb

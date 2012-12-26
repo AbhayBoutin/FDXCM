@@ -1,12 +1,18 @@
 Fdxcm::Application.routes.draw do
 
+# PSA Review
+  match "psa_review" => 'psa_review#index'
+  get "psa_review/index"
+  get "psa_review/edit"
+  get "psa_review/:weekreference", to: 'psa_review#show'
+  get "psa_review/show/:weekreference", to: 'psa_review#show'
+  get "psa_review/update"
+
 # Weekly Review
   match "weekly_review" => 'weekly_review#index'
-  # match "weekly_reviews/:weekreference" => 'weekly_review#show'
-  # , :requirements => { :date => /\d{4}*/ }
   get "weekly_review/index"
   get "weekly_review/edit"
-  get "weekly_review/:weekreference", to: 'weekly_review#show'#, as: 'weekreference'
+  get "weekly_review/:weekreference", to: 'weekly_review#show'
   get "weekly_review/show/:weekreference", to: 'weekly_review#show'
   get "weekly_review/update"
 

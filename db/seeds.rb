@@ -13,6 +13,7 @@
 # Business
   puts 'SETTING UP Business'
   business1 = Business.create({ :name => "Delivery Experts of NC", :taxIDNumber => "123-45-6789", :address => "123 Main St.", :city => "Charlotte", :state => "NC", :zip => "28202", :country => "USA", :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
+  business2 = Business.create({ :name => "Package Perks", :taxIDNumber => "234-56-7890", :address => "202 Outer Rd.", :city => "Belmont", :state => "SC", :zip => "29705", :country => "USA", :created_at => "Sun, 1 Jan 2012 01:01:01 -0500".to_datetime, :updated_at => nil }, :without_protection => true )
 
 # Addendum
   puts 'SETTING UP Addendum'

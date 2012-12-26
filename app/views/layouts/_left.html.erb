@@ -7,22 +7,37 @@
   <% end %>
 <% end %>
 
-<ul class="nav nav-list">
-  <li class="active"><a href="#">Home</a></li>
-  <li class="nav-header">Business</li>
-  <li><%= link_to 'FedEx Contracts', fedex_contracts_path %></li>
-  <li><%= link_to 'Employees', employees_path %></li>
-  <li><%= link_to 'Vehicles', vehicles_path %></li>
-  <li><%= link_to 'PSAs', psas_path %></li>
-  <li class="nav-header">Data</li>
-  <li><%= link_to 'Daily Data Entry', new_daily_datum_path %></li>
-  <li><%= link_to 'Weekly Review', weekly_review_path %></li>
-  <li>PSA Review</li>
-  <li class="nav-header">Financial</li>
-  <li>Business</li>
-  <li>Employee Pay</li>
-  <li>PSA</li>
-  <li>Vehicle</li>
-  <li class="nav-header">Other</li>
-  <li>Notes</li>
-</ul>
+<% if user_signed_in? %>
+  <ul class="nav nav-list">
+    <li class="active"><a href="#">Home</a></li>
+    <li class="nav-header">Business</li>
+    <li><%= link_to 'FedEx Contracts', fedex_contracts_path %></li>
+    <li><%= link_to 'Employees', employees_path %></li>
+    <li><%= link_to 'Vehicles', vehicles_path %></li>
+    <li><%= link_to 'PSAs', psas_path %></li>
+    <li class="nav-header">Data</li>
+    <li><%= link_to 'Daily Data Entry', new_daily_datum_path %></li>
+    <li><%= link_to 'Weekly Review', weekly_review_path %></li>
+    <li><%= link_to 'PSA Review', psa_review_path %></li>
+    <li class="nav-header">Financial</li>
+    <li>Business</li>
+    <li>Employee Pay</li>
+    <li>PSA</li>
+    <li>Vehicle</li>
+    <li class="nav-header">Future</li>
+    <li>Threshold Alerts</li>
+    <!-- When a employee goes over/under daily mileage -->
+    <li></li>
+    <li>PSA</li>
+    <li>Vehicle</li>
+    <li>Notes</li>
+  </ul>
+<% else %>
+  <ul class="nav nav-list">
+    <li class="active"><a href="#">Home</a></li>
+    <li class="nav-header">Business</li>
+    <li class="nav-header">Data</li>
+    <li class="nav-header">Financial</li>
+    <li class="nav-header">Other</li>
+  </ul>
+<% end %>

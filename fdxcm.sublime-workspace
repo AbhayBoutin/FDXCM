@@ -4,6 +4,194 @@
 		"selected_items":
 		[
 			[
+				"a",
+				"auto"
+			],
+			[
+				"mar",
+				"margin-left"
+			],
+			[
+				"cl",
+				"clear"
+			],
+			[
+				"S",
+				"State"
+			],
+			[
+				"B",
+				"Business"
+			],
+			[
+				"A",
+				"Addendums"
+			],
+			[
+				"E",
+				"Exceptions"
+			],
+			[
+				"EMA",
+				"EmployeeManagerAssignment"
+			],
+			[
+				"Nte",
+				"Note"
+			],
+			[
+				"PP",
+				"ProductionPay"
+			],
+			[
+				"reg",
+				"Region"
+			],
+			[
+				"rle",
+				"Role"
+			],
+			[
+				"ser",
+				"ServiceType"
+			],
+			[
+				"Dail",
+				"DailyDataVehicle"
+			],
+			[
+				"Empl",
+				"EmployeeManagerAssignment"
+			],
+			[
+				"Emp",
+				"EmployeeTerminal"
+			],
+			[
+				"PSA",
+				"PSAState"
+			],
+			[
+				"em",
+				"employee_id"
+			],
+			[
+				"adam",
+				"adamUser"
+			],
+			[
+				"Veh",
+				"Vehicle"
+			],
+			[
+				"Ve",
+				"VehicleType"
+			],
+			[
+				"V",
+				"VehicleFuel"
+			],
+			[
+				"ada",
+				"adamUser"
+			],
+			[
+				"first",
+				"firstName"
+			],
+			[
+				"id",
+				"id"
+			],
+			[
+				"employee",
+				"employee_id"
+			],
+			[
+				"bus",
+				"business_id"
+			],
+			[
+				"curre",
+				"currentDateToLoop"
+			],
+			[
+				"rev",
+				"reverseDates"
+			],
+			[
+				"da",
+				"dates"
+			],
+			[
+				"bor",
+				"border-left"
+			],
+			[
+				"de",
+				"deliveryPackage"
+			],
+			[
+				"day",
+				"dayOfData"
+			],
+			[
+				"wee",
+				"weekStart"
+			],
+			[
+				"deli",
+				"deliveryStop"
+			],
+			[
+				"empl",
+				"employeeWeeklyData"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"emp",
+				"employeeDailyData"
+			],
+			[
+				"do",
+				"dotted"
+			],
+			[
+				"week",
+				"weekStart"
+			],
+			[
+				"firs",
+				"first"
+			],
+			[
+				"dat",
+				"dailyData"
+			],
+			[
+				"cur",
+				"currentBusinessEmployees"
+			],
+			[
+				"cu",
+				"currentBusinessEmployees"
+			],
+			[
+				"cure",
+				"currentBusinessEmployees"
+			],
+			[
+				"current",
+				"currentBusiness"
+			],
+			[
+				"Cur",
+				"current"
+			],
+			[
 				"veh",
 				"vehicle"
 			],
@@ -18,14 +206,6 @@
 			[
 				"bulk",
 				"bulk26"
-			],
-			[
-				"bus",
-				"business1"
-			],
-			[
-				"Veh",
-				"VehicleOdometer"
 			],
 			[
 				"Vehic",
@@ -52,14 +232,6 @@
 				"ProductionPay"
 			],
 			[
-				"empl",
-				"employee"
-			],
-			[
-				"em",
-				"employees"
-			],
-			[
 				"fl",
 				"flatPay"
 			],
@@ -80,10 +252,6 @@
 				"employeePay"
 			],
 			[
-				"ser",
-				"serviceType"
-			],
-			[
 				"am",
 				"amount"
 			],
@@ -92,28 +260,12 @@
 				"Employee"
 			],
 			[
-				"Empl",
-				"EmployeeManager"
-			],
-			[
-				"da",
-				"dailyDataDeliveryExceptions"
-			],
-			[
 				"dail",
 				"dailyDataDeliveryExceptions"
 			],
 			[
 				"deliv",
 				"deliveryException"
-			],
-			[
-				"deli",
-				"deliveryException"
-			],
-			[
-				"Dail",
-				"DailyDataDeliveryException"
 			],
 			[
 				"exc",
@@ -152,10 +304,6 @@
 				"has_many"
 			],
 			[
-				"B",
-				"business"
-			],
-			[
 				"fe",
 				"FedexContract"
 			],
@@ -184,10 +332,6 @@
 				"DailyData"
 			],
 			[
-				"V",
-				"VehicleOdometer"
-			],
-			[
 				"servi",
 				"ServiceType"
 			],
@@ -202,10 +346,6 @@
 			[
 				"psa",
 				"psazips"
-			],
-			[
-				"Ve",
-				"vehicle"
 			],
 			[
 				"O",
@@ -226,10 +366,6 @@
 			[
 				"ps",
 				"psa"
-			],
-			[
-				"PSA",
-				"PSAState"
 			],
 			[
 				"fede",
@@ -319,9 +455,13 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 107.0,
+		"height": 392.0,
 		"selected_items":
 		[
+			[
+				"haml",
+				"Set Syntax: Ruby Haml"
+			],
 			[
 				"pack",
 				"Package Control: Install Package"
@@ -351,7 +491,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 575.0
+		"width": 530.0
 	},
 	"console":
 	{
@@ -368,10 +508,81 @@
 	},
 	"file_history":
 	[
-		"/Users/special/dev/FDXCM/config/database.yml",
-		"/Users/special/dev/FDXCM/Gemfile",
-		"/Users/special/dev/FDXCM/db/migrate/20121214153938_change_employees_to_business_to_business_to_employee.rb",
+		"/Users/special/dev/FDXCM/app/views/layouts/_left.html.erb",
+		"/Users/special/dev/FDXCM/config/routes.rb",
+		"/Users/special/dev/FDXCM/app/controllers/weekly_review_controller.rb",
+		"/Users/special/dev/FDXCM/app/views/weekly_review/show.html.haml",
+		"/Users/special/dev/FDXCM/doc/TODO.md",
+		"/Users/special/dev/FDXCM/app/views/layouts/application.html.erb",
 		"/Users/special/dev/FDXCM/db/schema.rb",
+		"/Users/special/dev/FDXCM/app/models/user.rb",
+		"/Users/special/dev/FDXCM/app/controllers/application_controller.rb",
+		"/Users/special/dev/FDXCM/app/views/layouts/_navigation.html.erb",
+		"/Users/special/dev/FDXCM/Gemfile",
+		"/Users/special/dev/FDXCM/db/seeds.rb",
+		"/Users/special/dev/FDXCM/app/controllers/employees_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/psa_reviews_controller.rb",
+		"/Users/special/dev/FDXCM/README.md",
+		"/Users/special/dev/FDXCM/app/assets/stylesheets/bootstrap_and_overrides.css.scss",
+		"/Users/special/dev/FDXCM/app/models/user_role.rb",
+		"/Users/special/dev/FDXCM/app/models/role.rb",
+		"/Users/special/dev/FDXCM/app/assets/stylesheets/zips.css.scss",
+		"/Users/special/dev/FDXCM/app/models/ability.rb",
+		"/Users/special/dev/FDXCM/app/controllers/addendums_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/businesses_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/daily_data_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/daily_data_delivery_exceptions_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/daily_data_employees_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/daily_data_vehicles_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/delivery_exceptions_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/employee_manager_assignments_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/employee_pays_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/employee_psas_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/employee_terminals_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/fedex_contracts_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/flat_pays_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/frequencies_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/notes_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/pay_profiles_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/pays_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/production_pays_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/psa_states_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/psas_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/psazips_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/regions_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/roles_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/service_types_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/states_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/terminals_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/user_roles_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/users_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/vehicle_fuels_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/vehicle_odometers_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/vehicle_types_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/vehicles_controller.rb",
+		"/Users/special/dev/FDXCM/app/controllers/zips_controller.rb",
+		"/Users/special/dev/FDXCM/app/views/daily_data/_form.html.haml",
+		"/Users/special/dev/FDXCM/app/assets/stylesheets/daily_data.css.scss",
+		"/Users/special/dev/FDXCM/app/models/daily_datum.rb",
+		"/Users/special/dev/FDXCM/db/migrate/20121224220920_add_supplemntal_boolean_to_psa.rb",
+		"/Users/special/dev/FDXCM/app/models/business.rb",
+		"/Users/special/dev/FDXCM/app/models/psa.rb",
+		"/Users/special/dev/FDXCM/log/development.log",
+		"/Users/special/dev/FDXCM/db/migrate/20121225020056_rename_businesses_to_business_in_psa.rb",
+		"/Users/special/dev/FDXCM/db/migrate/20121225020158_rename_businesses_to_business_in_fedex_contract.rb",
+		"/Users/special/dev/FDXCM/app/views/daily_data/new.html.erb",
+		"/Users/special/dev/FDXCM/app/models/fedex_contract.rb",
+		"/Users/special/dev/FDXCM/app/assets/stylesheets/weekly_review.css.scss",
+		"/Users/special/dev/FDXCM/app/views/employees/index.html.erb",
+		"/Users/special/dev/FDXCM/app/views/weekly_review/index.html.erb",
+		"/Users/special/dev/FDXCM/app/views/employees/show.html.erb",
+		"/Users/special/dev/FDXCM/app/views/vehicles/index.html.erb",
+		"/Users/special/dev/FDXCM/app/views/layouts/_footer.html.erb",
+		"/Users/special/dev/FDXCM/app/models/employee.rb",
+		"/Users/special/dev/FDXCM/db/migrate/20121221083854_change_daily_data_column_to_daily_datum.rb",
+		"/Users/special/dev/FDXCM/fdxcm.sublime-project",
+		"/Users/special/dev/FDXCM/config/database.yml",
+		"/Users/special/dev/FDXCM/db/migrate/20121214153938_change_employees_to_business_to_business_to_employee.rb",
 		"/Users/special/dev/FDXCM/db/migrate/20121218020702_remove_employees_from_businesses.rb",
 		"/Users/special/dev/FDXCM/Rails/fdxcm/.gitignore",
 		"/Users/special/dev/FDXCM/Rails/fdxcm/config/application.rb",
@@ -424,78 +635,7 @@
 		"/Users/special/dev/FDXCM/Rails/fdxcm/app/models/note.rb",
 		"/Users/special/dev/FDXCM/Rails/fdxcm/app/models/employee_psa.rb",
 		"/Users/special/dev/FDXCM/Rails/fdxcm/app/models/daily_data_vehicle.rb",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/app/models/daily_data_employee.rb",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/db/migrate/20121214160647_add_vehicles_to_vehicle_fuel_odometer_type.rb",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/db/migrate/20121214122442_add_vehicles_to_businesses.rb",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/db/migrate/20121214153938_change_employees_to_business_to_business_to_employee.rb",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/db/migrate/20121214121208_add_psas_to_businesses.rb",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/db/migrate/20121214121703_add_employees_to_business.rb",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/db/migrate/20121214115738_add_terminals_to_regions.rb",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/db/migrate/20121214115300_add_region_to_terminal.rb",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/db/migrate/20121213061801_add_psa_to_region.rb",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/db/migrate/20121213050947_remove_fedex_contracts_from_businesses.rb",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/db/migrate/20121213061020_add_businesses_to_fedex_contracts.rb",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/db/migrate/20121213052316_add_daily_data_to_daily_data_vehicle.rb",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/db/migrate/20121213050336_add_fedex_contracts_to_addendums.rb",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/db/migrate/20121213045107_add_fedex_contract_to_addendum.rb",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/db/migrate/20121213044244_add_service_type_index_to_vehicle.rb",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/test/fixtures/employee_psas.yml",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/db/migrate/20121212081655_add_references_to_vehicle.rb",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/db/migrate/20121212180609_create_daily_data.rb",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/db/migrate/20121212173220_create_daily_data.rb",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/doc/models_complete.svg",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/doc/models_brief.svg",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/db/migrate/20121212174812_drop_vehicle_from_daily_data.rb",
-		"/Users/special/.bash_history",
-		"/Users/special/dev/FDXCM/.gitignore",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/doc/TODO",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/doc/notes",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/TODO",
-		"/Users/special/dev/FDXCM/Java/fdxcm-create.ddl.sql",
-		"/Users/special/dev/FDXCM/README.md",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/db/migrate/20121210094356_create_vehicle_fuels.rb",
-		"/Users/special/dev/Llama-Node/README.md",
-		"/Users/special/Dropbox/TGM and Orange Projects/pics/controllers_brief.svg",
-		"/Users/special/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/app/views/employees/new.html.erb",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/app/views/employees/_form.html.erb",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/db/migrate/20121208065226_create_notes.rb",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/app/controllers/notes_controller.rb",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/db/development.sqlite3",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/db/test.sqlite3",
-		"/private/etc/hosts",
-		"/private/etc/apache2/extra/httpd-vhosts.conf",
-		"/private/etc/apache2/httpd.conf",
-		"/Users/special/dev/impress.js/impress.sublime-project",
-		"/Users/special/Sites/setheo/js/functions.min.js",
-		"/Users/special/Sites/setheo/component/pages/managementTeam.php",
-		"/Users/special/.bash_profile",
-		"/Users/special/Sites/setheo/component/head.php",
-		"/Users/special/Sites/setheo/component/navbar.php",
-		"/Users/special/Sites/setheo/component/pages/locations.php",
-		"/Users/special/Sites/setheo/component/pages/contact.php",
-		"/Users/special/.bashrc",
-		"/Users/special/Sites/setheo/js/functions.js",
-		"/Users/special/Sites/setheo/index.php",
-		"/Users/special/Sites/setheo/component/pages/divisions.php",
-		"/Users/special/Sites/setheo/component/js.php",
-		"/Users/special/Sites/setheo/component/footer.php",
-		"/Users/special/Sites/setheo/component/pages/home.php",
-		"/Users/special/Sites/setheo/component/pages/news.php",
-		"/Users/special/Sites/setheo/component/pages/about.php",
-		"/Users/special/dev/BackboneTrial/js/underscore-min.js",
-		"/Users/special/dev/BackboneTrial/js/json2.js",
-		"/Users/special/dev/BackboneTrial/js/app.js",
-		"/Users/special/dev/BackboneTrial/css/screen.css",
-		"/Users/special/dev/BackboneTrial/index.html",
-		"/Users/special/Sites/MessageBooth/test.php",
-		"/Users/special/dev/MessageBooth/index.html",
-		"/Users/special/dev/MessageBooth/test.php",
-		"/Users/special/dev/MessageBooth/css/bootstrap.min.css",
-		"/Users/special/dev/MessageBooth/css/main.css",
-		"/etc/apache2/httpd.conf",
-		"/private/etc/apache2/users/special.conf",
-		"/Users/special/dev/MessageBooth/js/jpegcam/htdocs/webcam.js"
+		"/Users/special/dev/FDXCM/Rails/fdxcm/app/models/daily_data_employee.rb"
 	],
 	"find":
 	{
@@ -506,6 +646,8 @@
 		"height": 0.0,
 		"where_history":
 		[
+			"",
+			"/Users/special/dev/FDXCM/app/controllers",
 			""
 		]
 	},
@@ -514,6 +656,50 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"before_filter :authenticate_user!",
+			"Weekly",
+			"weekly_review",
+			"FDXCM",
+			"adam",
+			"each",
+			"float:",
+			"Library",
+			"config.assets.initialize_on_precompile ",
+			"load_and_authorize_resource",
+			"load_and_authorize_r",
+			"load_and_authorize_resource",
+			"load_and_autorize_resource",
+			"load_and_authorize_resource",
+			"role",
+			"load_and_authorize_resource",
+			"skip_confirmation",
+			"businesses_id",
+			"psas",
+			"businesses_id",
+			"Dec",
+			"psa",
+			"supplemental",
+			"current_user",
+			"current_daily",
+			"current_user",
+			"8",
+			"7",
+			"5",
+			"weeklyReview",
+			"weeklyRev",
+			"top",
+			"business",
+			"dailyData_id",
+			"dailyDatum.id",
+			"dailyData_id",
+			"first",
+			"top",
+			"Package",
+			"code",
+			"11",
+			"5",
+			"11",
+			"5",
 			"post",
 			"vehicle",
 			"App_Name",
@@ -594,6 +780,11 @@
 		"regex": false,
 		"replace_history":
 		[
+			"11\n# load_and_authorize_resource",
+			"# load_and_authorize_resource\n11",
+			"11\n11",
+			"5",
+			"11",
 			":created_at => \"Sun, 1 Jan 2012 01:01:01 -0500\".to_datetime",
 			"",
 			"fedex",
@@ -603,7 +794,7 @@
 		"show_context": true,
 		"use_buffer2": true,
 		"whole_word": false,
-		"wrap": true
+		"wrap": false
 	},
 	"groups":
 	[
@@ -659,16 +850,84 @@
 				"db/schema.rb"
 			],
 			[
+				"gem",
+				"Gemfile"
+			],
+			[
+				"route",
+				"config/routes.rb"
+			],
+			[
+				"seed",
+				"db/seeds.rb"
+			],
+			[
+				"nav",
+				"app/views/layouts/_navigation.html.erb"
+			],
+			[
+				"rout",
+				"config/routes.rb"
+			],
+			[
+				"todo",
+				"doc/TODO.md"
+			],
+			[
+				"role",
+				"app/models/role.rb"
+			],
+			[
+				"schem",
+				"db/schema.rb"
+			],
+			[
+				"over",
+				"app/assets/stylesheets/bootstrap_and_overrides.css.scss"
+			],
+			[
+				"week",
+				"app/controllers/weekly_review_controller.rb"
+			],
+			[
+				"user",
+				"app/models/user.rb"
+			],
+			[
+				"see",
+				"db/seeds.rb"
+			],
+			[
+				"ge",
+				"Gemfile"
+			],
+			[
+				"log",
+				"log/development.log"
+			],
+			[
+				"_left",
+				"app/views/layouts/_left.html.erb"
+			],
+			[
+				"sch",
+				"db/schema.rb"
+			],
+			[
+				"to",
+				"doc/TODO.md"
+			],
+			[
+				"sc",
+				"db/schema.rb"
+			],
+			[
 				"vindex",
 				"app/views/vehicles/index.html.erb"
 			],
 			[
 				"edit",
 				"app/views/addendums/edit.html.erb"
-			],
-			[
-				"schem",
-				"Rails/fdxcm/db/schema.rb"
 			],
 			[
 				"rou",

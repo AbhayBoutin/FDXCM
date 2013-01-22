@@ -508,6 +508,9 @@
 	},
 	"file_history":
 	[
+		"/Users/special/dev/FDXCM/db/seeds.rb",
+		"/Users/special/dev/FDXCM/app/views/daily_data_delivery_exceptions/_form.html.erb",
+		"/Users/special/dev/FDXCM/Gemfile",
 		"/Users/special/dev/FDXCM/app/views/layouts/_left.html.erb",
 		"/Users/special/dev/FDXCM/config/routes.rb",
 		"/Users/special/dev/FDXCM/app/controllers/weekly_review_controller.rb",
@@ -518,8 +521,6 @@
 		"/Users/special/dev/FDXCM/app/models/user.rb",
 		"/Users/special/dev/FDXCM/app/controllers/application_controller.rb",
 		"/Users/special/dev/FDXCM/app/views/layouts/_navigation.html.erb",
-		"/Users/special/dev/FDXCM/Gemfile",
-		"/Users/special/dev/FDXCM/db/seeds.rb",
 		"/Users/special/dev/FDXCM/app/controllers/employees_controller.rb",
 		"/Users/special/dev/FDXCM/app/controllers/psa_reviews_controller.rb",
 		"/Users/special/dev/FDXCM/README.md",
@@ -634,8 +635,7 @@
 		"/Users/special/dev/FDXCM/Rails/fdxcm/app/models/psa_state.rb",
 		"/Users/special/dev/FDXCM/Rails/fdxcm/app/models/note.rb",
 		"/Users/special/dev/FDXCM/Rails/fdxcm/app/models/employee_psa.rb",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/app/models/daily_data_vehicle.rb",
-		"/Users/special/dev/FDXCM/Rails/fdxcm/app/models/daily_data_employee.rb"
+		"/Users/special/dev/FDXCM/Rails/fdxcm/app/models/daily_data_vehicle.rb"
 	],
 	"find":
 	{
